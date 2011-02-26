@@ -1,5 +1,44 @@
+/*
+SERVICE DESCRIPTIONS FOR PROJECT OBJECT
 
-{
+1) POST (create)	/project
+2) GET						/project/{project_id}
+						
+3) GET						/project/{project_id}/info
+4) POST (update)	/project/{project_id}/info
+
+5) GET						/project/{project_id}/resources
+
+6) GET						/project/{project_id}/resources/links
+7) GET						/project/{project_id}/resources/links/link/{link_id}
+8) POST (create)	/project/{project_id}/resources/links/link/
+9) POST (update)	/project/{project_id}/resources/links/link/{link_id}
+
+10) GET						/project/{project_id}/resources/organizations
+11) GET						/project/{project_id}/resources/organizations/organization/{organization_id}
+12) POST (create)	/project/{project_id}/resources/organizations/
+13) POSt (update)	/project/{project_id}/resources/organizations/organization/{organization_id}
+
+14) GET						/project/{project_id}/goals
+15) GET						/project/{project_id}/goals/goal/{goal_id}
+16) POST (create)	/project/{project_id}/goals
+17) POST (update)	/project/{project_id}/goals/goal/{goal_id}
+
+18) GET						/project/{project_id}/messages
+19) GET						/project/{project_id}/messages/comment/{message_id}
+19) GET						/project/{project_id}/messages/idea/{message_id}
+20) POST (create)	/project/{project_id}/messages/comment
+21) POST (update)	/project/{project_id}/messages/comment/{goal_id}
+	
+22) GET						/project/{project_id}/related
+23) GET						/project/{project_id}/related/idea/{idea_id}
+
+24) POST					/project_id/{project_id}/invite/email
+24) POST					/project_id/{project_id}/invite/idea
+
+*/
+
+var project = {
 	"project_id":12345,
 	"editable":true,
 	"info":{
