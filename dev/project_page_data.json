@@ -1,0 +1,154 @@
+
+{
+	"project_id":12345,
+	"editable":true,
+	"info":{
+		"title":"Start a Garden on 161st and Melrose Ave",
+		"owner":{
+			"name": "Shauna",
+			"u_id":123
+		},
+		"mission":"Tired of the empty lot at 161st and Melrose Ave. Lets start a 	community garden to help out the Bronx and get kids involved up here!",
+		"keywords":["garden","trees","green","environment",etc..],
+		"endorsements":{
+			"n_returned":3,
+			"offset":0,
+			"total":3,
+			"items":[
+				{
+					"endorsement_id":863,
+					"name":"Michael R. Bloomberg",
+					"title":"Mayor",
+					"organization":"City of New York"
+				},etc..
+			]
+		},
+		"location":{
+			"name":"South Bronx",
+			"zip":10465,
+			"position":{{lat},{lng}},
+			"bounds":[{ne},{se},{sw},{nw}]
+		}
+	},
+	"members":{
+		"n_returned":4,
+		"offset":0,
+		"total":4,
+		"items":[
+			{
+				"name":"Zeke S.",
+				"u_id":345
+			},
+			{
+				"name":"Andrew M.",
+				"u_id":565
+			},
+			{
+				"name":"Lev K.",
+				"u_id":232
+			},
+			{
+				"name":"Ian L.",
+				"u_id":666
+			}
+		]
+	},
+	"resources":{
+		"links":{
+			"n_returned":3,
+			"offset":0,
+			"total":3,
+			"items":[
+				{
+					"link_id":873,
+					"name":"Our Facebook Page",
+					"url":"http://www.facebook.com/pages/TypeCode/107452662612901"
+				},etc..
+			]
+			
+		},
+		"organizations":{
+			"n_returned":3,
+			"offset":0,
+			"total":3,
+			"items":[
+				{
+					"organization_id":9873,
+					"name":"Bronx River Alliance",
+					"url":"http://www.bronxriver.org/"
+				
+				},etc..
+			]
+		}
+	},
+	"goals":{
+		"n_returned":3,
+		"offset":0,
+		"total":3,
+		"items":[
+			{	
+				"goal_id":12345,
+				"active":true,
+				"text":"Contact the City Parks Department and find out the situation for planting trees in the area.",
+				"timeframe": "1 month",
+				"owner":{
+					"name":"Aaron A.",
+					"u_id":397
+				}
+			}, etc..
+		]
+	},
+	"messages":{
+		"n_returned":10,
+		"offset":0,
+		"total":30,
+		"items":[
+			{
+				"message_id":78643,
+				"message_type":"comment",
+				"owner":{
+					"name":"Jake B.",
+					"u_id":986
+				},
+				"body":"Hey this is great, I think we should set up weekly meetings so we can me more efficient. <img src='http://someimagehere.html'></img>",
+				"created":"datetime",
+				"idea":null
+			},
+			{
+				"message_id":87634,
+				"message_type":"join",
+				"owner":{
+					"name":"Drew H.",
+					"u_id":986
+				},
+				"body":"Hey this is great, I think we should set up weekly meetings so we can me more efficient. <img src='http://someimagehere.html'></img>",
+				"created":"datetime",
+				"idea":{
+					"idea_id":78634,
+					"owner":{
+						"name":"Drew H.",
+						"u_id":986
+					},
+					"message":"Theres a big need on my street for a garden...",
+					"created":"datetime"
+				}
+			}
+		]
+	},
+	"related_ideas":{
+		"n_returned":45,
+		"offset":0,
+		"total":45,
+		"items":[
+			{
+				"idea_id":754,
+				"owner":{
+					"name":"Andrew M.",
+					"u_id":9342
+				},
+				"message":"Theres a big need on my street for a garden...",
+				"created":"datetime"
+			},etc..
+		]
+	}
+}
