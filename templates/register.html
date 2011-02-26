@@ -1,0 +1,95 @@
+{% extends "./partials/base.html" %}
+
+{% block title %}
+Give A Minute - Register
+{% endblock title %}
+
+{% block continent %}
+<div class='continent register'>
+	<div class='headlands clear'>
+		<div class='west'>
+			<h2>Give a Minute is a place to make your city better.</h2>
+			<h3>Share your ideas. Build projects. Make a change.</h3>
+		</div>
+		<div class='east'>
+			<div class='merlin-navigation'>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class='midlands'>
+		<form class='merlin' action='/register' method='POST'>
+			<div class='step 1 clear'>
+				<p>Create a login using <strong>Facebook</strong> or <strong>Twitter</strong></p>
+				<div class='clear'>
+					<a href='' class='login-facebook west'>Facebook</a>
+					<a href='' class='login-twitter west'>Twitter</a>
+				</div>
+				<p><a href='#'>Click Here</a> if you want to create a login without Facebook or Twitter</p>
+			</div>
+			
+			<div class='step 2a clear'>
+				<p>Give a Minute users use their real names. <a href='#'><strong>Here's Why</strong></a></p>
+				
+				<input type='text' name='f_name' id='f_name'/>
+				<input type='text' name='l_name' id='l_name'/>
+				<label for='email'>Email</label>
+				<input type='text' name='email' id='email'/>
+				<label for='password'>Password</label>
+				<input type='text' name='password' id='password'/>
+				
+				<input type='checkbox' name='tos' id='tos'/>
+				<label for='tos'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
+			</div>
+			
+			<div class='step 2b clear'>
+				<p><strong>You can opt to receive email notifications from Give a Minute projects.</strong></p>
+				<p>Please Provide an email.</p>
+				
+				<input type='text' name='email' id='email'/>
+				
+				<input type='checkbox' name='tos' id='tos'/>
+				<label for='tos'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
+			</div>
+			
+			<div class='step 3 clear'>
+				<div class='west'>
+					<p>If you added any ideas to Give a Minute via SMS, you can link those ideas by entering your phone number below.</p>
+					<p>
+						<input type='text' name='phone_1' id='phone_1'/>
+						<input type='text' name='phone_2' id='phone_2'/>
+						-
+						<input type='text' name='phone_3' id='phone_3'/>
+						<input type='button' name='lookup_sms' value='Find My Ideas' />
+					</p>
+				</div>
+				<div class='east'>
+					<input type='checkbox' name='no_sms' id='no_sms'/>
+					<label for='no_sms'>I didn't text any ideas.</label>
+				</div>
+			</div>
+			
+			<div class='step 3a clear'>
+				<p><strong>We found 2 ideas from that telephone number.</strong></p>
+				<p>We'll add these ideas to your profile and link any new ideas that come in from that number</p>
+			</div>
+			
+			<div class='step 3b clear'>
+				<p>We couldn't find an ideas associated with</p>
+				<p>(XXX) XXX-XXXX</p>
+			</div>
+			
+			<div class='step 3c clear'>
+				<p>The number</p>
+				<p>(XXX) XXX-XXXX</p>
+				<p>is already associated with an account.</p>
+			</div>
+		</form>
+	</div>
+
+	<div class='foothills'>
+		<a class='back' href='#'><p>&larr; Back</p></a>
+	</div>
+</div>
+{% endblock continent %}

@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------------------
+	Give a Minute
+
+
+-------------------------------------------------------------------------------*/
+
+html.universe{  }
+head.heavens{  }
+
+body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
+	font-family:DIN,Helvetica; font-size:13px;}
+
+.west{ float:left; }
+.east{ float:right; }
+
+h1{ font-size:25px; }
+h2{ font-size:20px; }
+
+
+div.atmosphere{ width:100%; background-color:#231f20; height:45px; text-align: }
+div.atmosphere .stratosphere{ width:960px;margin:0px auto; display:block; }
+div.atmosphere .stratosphere ul li{ float:left; }
+
+div.continent{ width:960px; margin:0px auto; display:block; }
+	div.headlands{ width:100%; }
+	div.midlands{ width:100%; }
+	div.foothills{ width:100%; }
+
+div.seafloor{ width:960px; margin:0px auto; display:block; border-top:2px solid #ebeae8;
+	padding-top:20px;margin-top:20px; }
+
+div.seafloor .west{ width:675px; }
+div.seafloor .east{ width:275px; }
+
+div.seafloor .footer-logos { margin-bottom:35px; }
+div.seafloor .footer-links { width:150px; }
+div.seafloor .footer-search { width:525px; }
+div.seafloor .footer-facebook { margin-bottom:35px; }
+
+
+/* Home */
+div.continent.home {  }
+div.continent.home .headlands { border-bottom:1px solid #ebeae8; }
+div.home-splash { height:635px;background-color:#3d3936; }
+div.home-facebook { padding:15px 0px; }
+
+/* Register */
+div.continent.register {  }
+div.continent.register .merlin{  }
+div.continent.register .merlin .step{ width:100%; }
+div.continent.register .headlands{ border-bottom:1px solid #ebeae8; }
+div.continent.register .midlands{ border-bottom:1px solid #ebeae8; }
+div.continent.register .merlin .step{ padding:10px 0px 10px 0px; }
+div.continent.register .foothills { padding-top:30px; }
+
+/* Login */
+div.continent.login {  }
+div.continent.login .headlands{ border-bottom:1px solid #ebeae8; }
+div.continent.login .midlands { width:; }
+div.continent.login .midlands .west .email-login{ float:left;width:300px; }
+div.continent.login .midlands .west .oauth-login{ float:right;width:; }
+div.continent.login .midlands .east { width:374px; border-left:1px solid #ebeae8;
+	padding:40px 0px;  }
+div.continent.login .midlands .east p { margin-left:35px; }
