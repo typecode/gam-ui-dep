@@ -1,0 +1,19 @@
+
+
+/* /register */
+GET /register/ideas //retreieves ideas for a SMS query
+POST (create) /user
+
+/* /login */
+
+/* /feedback */
+POST /feedback/submit
+
+/* /create */
+POST /create/upload
+POST /locations //fetches locations for a string fragment
+POST /create/submit
+GET /create/similar/{project_id}
+GET /create/resources/{project_id}
+
+
