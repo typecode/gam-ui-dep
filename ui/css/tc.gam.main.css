@@ -16,7 +16,6 @@ body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 h1{ font-size:25px; }
 h2{ font-size:20px; }
 
-
 div.atmosphere{ width:100%; background-color:#231f20; height:45px; text-align: }
 div.atmosphere .stratosphere{ width:960px;margin:0px auto; display:block; }
 div.atmosphere .stratosphere ul li{ float:left; }
@@ -36,7 +35,6 @@ div.seafloor .footer-logos { margin-bottom:35px; }
 div.seafloor .footer-links { width:150px; }
 div.seafloor .footer-search { width:525px; }
 div.seafloor .footer-facebook { margin-bottom:35px; }
-
 
 /* Home */
 div.continent.home {  }
