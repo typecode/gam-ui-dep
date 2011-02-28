@@ -5,7 +5,7 @@
 -------------------------------------------------------------------------------*/
 
 html.universe{  }
-head.heavens{  }
+head.heavens{ /* too bad we can't style the heavens */ }
 
 body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 	font-family:DIN,Helvetica; font-size:13px;}
@@ -16,30 +16,31 @@ body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 h1{ font-size:25px; }
 h2{ font-size:20px; }
 
-div.atmosphere{ width:100%; background-color:#231f20; height:45px; text-align: }
-div.atmosphere .stratosphere{ width:960px;margin:0px auto; display:block; }
-div.atmosphere .stratosphere ul li{ float:left; }
+div.atmosphere{ width:100%; background-color:#231f20; }
+div.atmosphere .stratosphere{ width:960px; margin:0 auto; }
+div.atmosphere .stratosphere > ul > li{ float:left; }
 
-div.continent{ width:960px; margin:0px auto; display:block; }
+div.continent{ width:960px; margin:0 auto; }
 	div.headlands{ width:100%; }
 	div.midlands{ width:100%; }
 	div.foothills{ width:100%; }
 
-div.seafloor{ width:960px; margin:0px auto; display:block; border-top:2px solid #ebeae8;
-	padding-top:20px;margin-top:20px; }
+.empty-state-box { background-color:#d1fdb9; border:1px solid #cae6b5; }
 
-div.seafloor .west{ width:675px; }
-div.seafloor .east{ width:275px; }
+/* seafloor */
+div.seafloor{ width:960px; margin:20px auto 0; padding:20px 0 0; border-top:2px solid #ebeae8; }
 
-div.seafloor .footer-logos { margin-bottom:35px; }
-div.seafloor .footer-links { width:150px; }
-div.seafloor .footer-search { width:525px; }
-div.seafloor .footer-facebook { margin-bottom:35px; }
+div.seafloor > .west{ width:675px; }
+div.seafloor > .east{ width:275px; }
+div.seafloor .box { padding:0 0 25px; }
+
+div.seafloor .sitemap { width:150px; float:left; }
+div.seafloor .search { width:525px; float:right; }
 
 /* Home */
 div.continent.home {  }
 div.continent.home .headlands { border-bottom:1px solid #ebeae8; }
-div.home-splash { height:635px;background-color:#3d3936; }
+div.home-splash { height:635px; background-color:#3d3936; }
 div.home-facebook { padding:15px 0px; }
 
 /* Register */

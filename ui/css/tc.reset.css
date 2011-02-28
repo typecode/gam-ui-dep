@@ -40,3 +40,11 @@ blockquote, q { quotes:none; }
 q:before, q:after { content:'"'; }
 :focus { outline:0; }
 ::-moz-focus-inner { border-color:transparent; }
+
+.clearfix:after { 
+	content:"."; display:block; clear:both; 
+	visibility:hidden; line-height:0; height:0; 
+}
+.clearfix { display:inline-block; }
+html[xmlns] .clearfix { display:block; }
+* html .clearfix { zoom:1; }
