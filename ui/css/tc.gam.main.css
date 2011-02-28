@@ -25,6 +25,12 @@ div.continent{ width:960px; margin:0 auto; }
 	div.midlands{ width:100%; }
 	div.foothills{ width:100%; }
 
+.midlands > .east { width:600px; }
+.midlands > .west { width:320px; }
+
+.midlands .box > .hd { background-color:#edeceb; border-bottom:1px solid #e6e6e3; }
+.midlands .box > .hd h2 { text-transform:uppercase; }
+
 .empty-state-box { background-color:#d1fdb9; border:1px solid #cae6b5; }
 
 /* seafloor */
