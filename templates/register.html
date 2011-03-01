@@ -13,37 +13,45 @@ Give A Minute - Register
 		</div>
 		<div class='east'>
 			<div class='merlin-navigation'>
-				
+				<div class='box progress clearfix'>
+					<div class='indicator 1 west'>1</div>
+					<div class='indicator 1 west'>2</div>
+					<div class='indicator 1 west'>3</div>
+				</div>
+				<div class='box next'>
+					<a href='#' class='next-button'>Next</a>
+				</div>
 			</div>
 		</div>
 	</div>
 	
 	<div class='midlands'>
 		<form class='merlin' action='/register' method='POST'>
-			<div class='step 1 clearfix'>
+			
+			<div class='step start clearfix'>
 				<p>Create a login using <strong>Facebook</strong> or <strong>Twitter</strong></p>
 				<div class='clearfix'>
 					<a href='' class='login-facebook west'>Facebook</a>
 					<a href='' class='login-twitter west'>Twitter</a>
 				</div>
-				<p><a href='#'>Click Here</a> if you want to create a login without Facebook or Twitter</p>
+				<p><a class='history' href='#user-info'>Click Here</a> if you want to create a login without Facebook or Twitter</p>
 			</div>
 			
-			<div class='step 2a clearfix'>
+			<div class='step user-info clearfix' style='display:none;'>
 				<p>Give a Minute users use their real names. <a href='#'><strong>Here's Why</strong></a></p>
 				
-				<input type='text' name='f_name' id='f_name'/>
-				<input type='text' name='l_name' id='l_name'/>
+				<input value='' type='text' name='f_name' id='f_name' class='f_name'/>
+				<input value='' type='text' name='l_name' id='l_name' class='l_name'/>
 				<label for='email'>Email</label>
-				<input type='text' name='email' id='email'/>
+				<input value='' type='text' name='email' id='email' class='email'/>
 				<label for='password'>Password</label>
-				<input type='text' name='password' id='password'/>
+				<input value='' type='text' name='password' id='password' class='password'/>
 				
 				<input type='checkbox' name='tos' id='tos'/>
 				<label for='tos'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
 			</div>
 			
-			<div class='step 2b clearfix'>
+			<div class='step email clearfix ' style='display:none;'>
 				<p><strong>You can opt to receive email notifications from Give a Minute projects.</strong></p>
 				<p>Please Provide an email.</p>
 				
@@ -53,7 +61,7 @@ Give A Minute - Register
 				<label for='tos'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
 			</div>
 			
-			<div class='step 3 clearfix'>
+			<div class='step sms-lookup clearfix ' style='display:none;'>
 				<div class='west'>
 					<p>If you added any ideas to Give a Minute via SMS, you can link those ideas by entering your phone number below.</p>
 					<p>
@@ -61,7 +69,7 @@ Give A Minute - Register
 						<input type='text' name='phone_2' id='phone_2'/>
 						-
 						<input type='text' name='phone_3' id='phone_3'/>
-						<input type='button' name='lookup_sms' value='Find My Ideas' />
+						<input type='button' class='submit-sms-query' name='lookup_sms' value='Find My Ideas' />
 					</p>
 				</div>
 				<div class='east'>
@@ -70,17 +78,17 @@ Give A Minute - Register
 				</div>
 			</div>
 			
-			<div class='step 3a clearfix'>
+			<div class='step sms-results clearfix ' style='display:none;'>
 				<p><strong>We found 2 ideas from that telephone number.</strong></p>
 				<p>We'll add these ideas to your profile and link any new ideas that come in from that number</p>
 			</div>
 			
-			<div class='step 3b clearfix'>
+			<div class='step sms-no-results clearfix ' style='display:none;'>
 				<p>We couldn't find an ideas associated with</p>
 				<p>(XXX) XXX-XXXX</p>
 			</div>
 			
-			<div class='step 3c clearfix'>
+			<div class='step sms-already-used clearfix ' style='display:none;'>
 				<p>The number</p>
 				<p>(XXX) XXX-XXXX</p>
 				<p>is already associated with an account.</p>
@@ -92,4 +100,80 @@ Give A Minute - Register
 		<a class='back' href='#'><p>&larr; Back</p></a>
 	</div>
 </div>
+
+<script>
+	app_page.features.push(function(app){
+		tc.util.log('Give A Minute: Register');
+		app.components.merlin = new tc.merlin(app,{
+			selector:'.merlin',
+			controls:tc.jQ('.merlin-controls'),
+			next_button:tc.jQ('.next-button'),
+			back_button:tc.jQ('.foothills .back'),
+			watch_keypress:true,
+			first_step:'start',
+			steps:{
+				'start':{
+					progress:1,
+					selector:'.start',
+					prev_step:null,
+					next_step:'user-info'
+				},
+				'user-info':{
+					progress:2,
+					selector:'.user-info',
+					prev_step:'start',
+					next_step:'email',
+					validators:{
+						'input.f_name':['max-32','min-3','required'],
+						'input.l_name':['max-32','min-3','required'],
+						'input.password':['password','required'],
+						'input.email':['max-32','min-3','email','required']
+					}
+				},
+				'email':{
+					progress:2,
+					selector:'.email',
+					prev_step:'user-info',
+					next_step:'sms-lookup'
+				},
+				'sms-lookup':{
+					progress:3,
+					selector:'.sms-lookup',
+					prev_step:'email',
+					next_step:'sms-process',
+					init:function(merlin,dom){
+						dom.find('.submit-sms-query').one('click',{merlin:merlin},function(e,d){
+							merlin.dom.find('.step').hide();
+							e.data.merlin.show_step('sms-results');
+						});
+					}
+				},
+				'sms-results':{
+					progress:3,
+					selector:'.sms-results',
+					prev_step:'sms-lookup',
+					next_step:'finish'
+				},
+				'sms-no-results':{
+					progress:3,
+					selector:'.sms-no-results',
+					prev_step:'sms-lookup',
+					next_step:'finish'
+				},
+				'sms-already-used':{
+					progress:3,
+					selector:'.sms-already-used',
+					prev_step:'sms-lookup',
+					next_step:'finish'
+				},
+				'finish':function(merlin){
+					tc.util.dump('FINISH');
+					merlin.dom.find('.step').hide();
+				}
+			}
+		});
+	});
+</script>
+
+
 {% endblock continent %}

@@ -12,8 +12,36 @@ POST /feedback/submit
 /* /create */
 POST /create/upload
 POST /locations //fetches locations for a string fragment
+//Need to discuss:
 POST /create/submit
 GET /create/similar/{project_id}
 GET /create/resources/{project_id}
 
+/* /useraccount */
+GET /user/{u_id}
+GET /user/{u_id}/messages
+  returns:
+    {
+      
+    }
+GET /user/{u_id}/activity
+GET /user/{u_id}/account
+POST /user/{u_id}/account
 
+/* /search */
+GET /search
+
+/* /resource */
+POST /resource //created new resource
+
+/* /about */
+//None
+
+/* /news */
+//needs WP-Install
+
+/* /tou */
+//none
+
+/* /mobile */
+//TBD
