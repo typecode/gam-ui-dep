@@ -194,8 +194,26 @@ div.continent.login .midlands .east { width:374px; border-left:1px solid #ebeae8
 div.continent.login .midlands .east p { margin-left:35px; }
 
 /* Create */
-div.continent.create {}
+div.continent.create { }
+div.continent.create .headlands { margin-bottom: 65px; }
 div.continent.create .headlands > .west { width: 600px; }
 div.continent.create .headlands > .east { width: 360px; text-align: right}
 div.continent.create .midlands .step > .west { width: 160px; }
 div.continent.create .midlands .step > .east { width: 800px; }
+div.continent.create .midlands .step .thumb { position: relative; width: 122px; height: 135px; }
+div.continent.create .midlands .step .thumb .proj { position: absolute; bottom: 0; left: 0; margin-left: 7px; z-index: 1; width: 115px; height: 115px; }
+div.continent.create .midlands .step .thumb .overlay-tag { position: absolute; top: 0; left: 0; z-index: 2; width: 54px; height: 54px; background: url(../images/avatar_sq_53.png) top left no-repeat transparent; }
+div.continent.create .midlands .step div.row { width: 800px; clear: both; margin: 14px 0 6px; }
+div.continent.create .midlands .step label { font-size: 16px; line-height: 20px; color: #55504b; width: 200px; margin-right: 15px; display: block; float: left; padding-top: 3px;}
+div.continent.create .midlands .step input,
+div.continent.create .midlands .step textarea { width: 412px; font-size: 18px; line-height: 22px; color: #b9b8b6; padding: 8px; border: 1px solid #b9b8b6; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; font-family: DIN, Verdana, Arial, sans-serif; display: block; float: left; font-style: italic; }
+div.continent.create .midlands .step input:focus {font-family: Georgia, Times, Times New Roman, serif; color: #55504b; font-style: normal; }
+div.continent.create .midlands .step textarea { height: 135px; }
+div.continent.create .midlands .step .charlimit {float:left; display: block; margin-left: 6px; margin-top: 15px; color: #878786; font-size: 11px; line-height: 11px; font-weight: bold;}
+div.continent.create .midlands .step .below-input {display: block; clear: both; margin-left: 220px; padding-top: 10px; font-size: 16px; line-height: 22px; color: #55504b; }
+div.continent.create .midlands .step .below-input .createdby { position: relative; top: -2px; margin-right: 5px; }
+div.continent.create .midlands .step .below-input .user-name { font-size: 22px; font-family: Georgia, Times, Times New Roman, serif; font-weight: bold; margin-right: 10px;}
+div.continent.create .midlands .step .below-input .edit { position: relative; top: -3px; font-size: 9px; font-weight: bold; font-style: italic; }
+
+
+
