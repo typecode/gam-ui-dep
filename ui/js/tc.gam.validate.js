@@ -62,6 +62,12 @@ tc.validate = function(element,validators){
 					errors.push("Invalid Email.");
 				}
 				break;
+			case 'numeric':
+				if(isNaN(Number(value))){
+					valid = false;
+					errors.push('Not a number.')
+				}
+				break;
 		}
 	}
 	
