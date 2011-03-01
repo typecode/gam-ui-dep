@@ -1,18 +1,28 @@
 {% extends "./partials/base.html" %}
 
+{% block title %}
+Give A Minute - Project
+{% endblock title %}
+
 {% block continent %}
 
 <div class='continent project'>
 	
-	<div class='headlands project-header'>
+	<div class='headlands clearfix project-header'>
 		<div class="thumb">
-			<img src="" alt=""/>
+			<img src="http://placehold.it/100x100" alt="" class="proj"/>
 			<img src="" alt="" class="overlay-tag"/>
+		</div>
+		<div class="tools">
+			<div class="members">
+				Members <span class="counter">0</span>
+			</div>
+			<span class="control"><a href="#">Manage</a></span>
 		</div>
 		<div class="main">
 			<h1>Start a Garden on 161st and Melrose Ave</h1>
 			<cite class="meta"><span>Created</span> <span>by</span> <strong>You!</strong></cite>
-			<div class="social-networking">
+			<div class="ft">
 				<div class="twitter">
 					
 				</div>
@@ -21,22 +31,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="tools">
-			<div class="members">
-				Members <span class="counter">0</span>
-			</div>
-			<span class="control"><a href="#">Manage</a></span>
-		</div>
+		
 	</div>
 
-	<div class='midlands'>
+	<div class='midlands clearfix'>
 		<div class="west">
 			<div class="box mission">
 				<div class="hd">
-					<h2>
-						Mission 
-						<span class="control"><a href="#">Manage</a></span>
-					</h2>
+					<h2>Mission</h2>
+					<span class="control"><a href="#">Manage</a></span>
 				</div>
 				<div class="bd">
 					<div class="our-mission">
@@ -95,6 +98,35 @@
 								<p><a href="">Add links</a> to anything, including some of our recommended links like Facebook groups and Kickstarter.</p>
 								<button>Add Link</button>
 							</div>
+							
+							
+							<div class="gam-tooltip">
+								<div class="gam-tooltip-hd">
+									<h2>Bronx River Alliance</h2>
+								</div>
+								<div class="gam-tooltip-bd">
+									<div class="info">
+										<div class="thumb">
+											<img src="" alt=""/>
+										</div>
+										<div>
+											<p>In collaboration with Alliance partners, we maintain a full-time presence on the river, monitoring river conditions and doing ecological restoration projects that improve water quality, stabilize the riverbanks and improve river habitat.</p>
+										</div>
+									</div>
+									<dl>
+										<dt>Visit Us</dt>
+										<dd><a href="">bronxriver.org</a></dd>
+										
+										<dt>Latest Update</dt>
+										<dd>
+											<blockquote>
+												<p>Wally Arias is an intern from the Phipps Community Development Corporation. For the past few weeks he has been alongside&hellip;</p>
+											</blockquote>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 					
@@ -172,7 +204,7 @@
 					</div>
 				</div>
 				
-				<div class="actions back">
+				<div class="actions detached back">
 					<a href="#">Back <span>to</span> Project Home</a>
 				</div>
 				<div class="add-goal form-pane">
