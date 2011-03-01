@@ -4,12 +4,12 @@
 
 -------------------------------------------------------------------------------*/
 
-html.universe{ overflow-y: scroll; }
+html.universe{ }
 head.heavens{ /* too bad we can't style the heavens */ }
 
-body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
+body.earth{ height:100%; overflow:hidden; background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 	font-family:DIN,Helvetica; font-size:13px; }
-div.exosphere{  }
+div.exosphere{ height:100%; overflow-y:scroll; }
 
 .west{ float:left; }
 .east{ float:right; }
