@@ -42,3 +42,15 @@ function makeClass(){
       return new arguments.callee( arguments );
   };
 }
+
+tc.timer = function(time,func,callback){
+	var a = {timer:setTimeout(func,time),callback:null}
+	if(typeof(callback) == 'function'){a.callback = callback;}
+	return a;
+};
+
+tc.clearTimer = function(a){
+	clearTimeout(a.timer);
+	if(typeof(a.callback) == 'function'){a.callback();};
+	return this;
+};

@@ -21,11 +21,12 @@ tc.merlin.prototype.init = function(app,options){
 
 tc.merlin.prototype.setup_events = function(app){
 	tc.util.log('tc.merlin.setup_events');
-	this.dom.find('a').bind('click',this.event_data,this.handlers.a_click);
+	this.dom.find('a.step_link').bind('click',this.event_data,this.handlers.a_click);
 	if(this.options.back_button){
 		this.options.back_button.bind('click',this.event_data,this.handlers.last_step);
 	}
 	if(this.options.next_button){
+		this.options.next_button.addClass('disabled');
 		this.options.next_button.bind('click',this.event_data,this.handlers.next_step);
 	}
 	this.dom.bind('merlin-step-valid',this.event_data,this.handlers.valid);
@@ -65,11 +66,14 @@ tc.merlin.prototype.show_step = function(step){
 	if(tc.jQ.isFunction(this.current_step.init)){
 		this.current_step.init(this,this.current_step.dom);
 	}
+	if(this.current_step.validators){
+		this.validate(this.current_step.validators,false);
+	}
 }
 
-tc.merlin.prototype.validate = function(validators){
+tc.merlin.prototype.validate = function(validators,force_focus){
 	tc.util.log('tc.merlin.validate');
-	var i, valid;
+	var i, valid, temp_valid, j;
 	if(!this.current_step.dom){
 		return;
 	}
@@ -81,21 +85,31 @@ tc.merlin.prototype.validate = function(validators){
 				element:this.current_step.dom.find(i),
 				validators:validators[i]
 			}
+			if(force_focus){
+				this.current_step.inputs[i].element.addClass('has-been-focused');
+			}
 		}
 	}
+	this.current_step.errors = [];
 	for(i in this.current_step.inputs){
-		if(!tc.validate(this.current_step.inputs[i].element,this.current_step.inputs[i].validators)){
+		temp_valid = tc.validate(this.current_step.inputs[i].element,this.current_step.inputs[i].validators);
+		if(!temp_valid.valid){
 			valid = false;
+			//for(j in temp_valid.errors){
+			//	this.current_step.errors.push(temp_valid.errors[j]);
+			//}
 		}
 	}
 	if(valid){
 		this.dom.trigger('merlin-step-valid',{
 			step:this.current_step
 		});
+		return true;
 	} else {
 		this.dom.trigger('merlin-step-invalid',{
 			step:this.current_step
 		});
+		return false;
 	}
 }
 
@@ -113,10 +127,16 @@ tc.merlin.prototype.handlers = {
 	next_step:function(e,d){
 		tc.util.log('tc.merlin.handlers.next_step');
 		var valid;
+		valid = true;
 		if(e.data.me.current_step.validators){
-			valid = e.data.me.validate(e.data.me.current_step.validators);
+			valid = e.data.me.validate(e.data.me.current_step.validators,true);
 		}
-		if(!valid){ return; }
+		if(!valid){
+			return;
+		}
+		if(e.target.className.indexOf('disabled') > 0){
+			return;
+		}
 		if(e.data.me.current_step && e.data.me.current_step.next_step){
 			e.data.me.show_step(e.data.me.current_step.next_step);
 		}
