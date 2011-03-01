@@ -4,11 +4,12 @@
 
 -------------------------------------------------------------------------------*/
 
-html.universe{ overflow-y: scroll; }
+html.universe{ }
 head.heavens{ /* too bad we can't style the heavens */ }
 
-body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
-	font-family:DIN,Helvetica; font-size:13px;}
+body.earth{ height:100%; overflow:hidden; background:none repeat scroll 0 0 #F3F2F0; text-align:left;
+	font-family:DIN,Helvetica; font-size:13px; }
+div.exosphere{ height:100%; overflow-y:scroll; }
 
 .west{ float:left; }
 .east{ float:right; }
@@ -24,7 +25,7 @@ h3{ font-size:14px; }
 .above-h1 em { font-weight: normal; font-style: italic; text-transform: none; }
 
 /* top bar */
-div.atmosphere{ width:100%; background-color:#231f20; height: 45px; margin-bottom: 35px; }
+div.atmosphere{ width:100%; background-color:#231f20; height: 45px; }
 div.atmosphere .stratosphere{ width:960px; margin:0 auto; position: relative;}
 div.atmosphere .stratosphere > ul > li{ float:left; }
 div.atmosphere .stratosphere li a { color: #c9b577; text-transform: uppercase;}
@@ -42,8 +43,6 @@ div.atmosphere .stratosphere li.search input[type=submit]:hover { color: #F3F2F0
 div.atmosphere .stratosphere li.userland { margin-top: 15px; text-align: right; position: absolute; top: 0; right: 0; }
 div.atmosphere .stratosphere li.userland div { float:right; font-weight: bold; font-size: 13px; line-height: 13px; }
 div.atmosphere .stratosphere li.userland div.join { margin-right: 45px; }
-
-
 
 div.continent{ width:960px; margin:0 auto; }
 	div.headlands{ width:100%; position:relative; margin:0 0 20px; }
@@ -78,6 +77,7 @@ button { text-transform:uppercase; }
 .tooltip .tooltip-hd h2 { font-family:MetaSerif,Georgia,serif; color:#ccccca; }
 
 /* modal */
+.modal-content{ display:none; }
 .modal {
 	display:none;	
 	z-index:10000;
@@ -163,7 +163,7 @@ div.seafloor .social-networking { margin-top: 3px; padding-bottom: 0; }
 div.seafloor .copyright { margin-top: 6px; }
 
 /* Home */
-div.continent.home {  }
+div.continent.home { margin-top:0; }
 div.continent.home .headlands { border-bottom:1px solid #ebeae8; }
 .home .headlands .splash { height:635px; background-color:#cccccc; }
 .home .headlands .social-networking { padding:15px 0; color: #55504b;}
