@@ -49,18 +49,18 @@ Give A Minute - Register
 				<label for='password'>Password</label>
 				<input value='' type='password' name='password' id='password' class='password'/>
 				
-				<input type='checkbox' name='tos' id='tos' class='tos'/>
-				<label for='tos'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
+				<input type='checkbox' name='tos-user-info' id='tos-user-info' class='tos-user-info'/>
+				<label for='tos-user-info'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
 			</div>
 			
-			<div class='step email clearfix ' style='display:none;'>
+			<div class='step email-step clearfix ' style='display:none;'>
 				<p><strong>You can opt to receive email notifications from Give a Minute projects.</strong></p>
 				<p>Please Provide an email.</p>
 				
-				<input type='text' name='email' id='email'/>
+				<input type='text' name='email' id='email' class='email'/>
 				
-				<input type='checkbox' name='tos' id='tos'/>
-				<label for='tos'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
+				<input type='checkbox' name='tos-email' id='tos-email' class='tos-email'/>
+				<label for='tos-email'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
 			</div>
 			
 			<div class='step sms-lookup clearfix ' style='display:none;'>
@@ -140,14 +140,26 @@ Give A Minute - Register
 						'input.l_name':['max-32','min-3','required'],
 						'input.email':['max-32','min-3','email','required'],
 						'input.password':['password-20','required'],
-						'input.tos':['required']
+						'input.tos-user-info':['required']
 					}
 				},
 				'email':{
 					progress:2,
-					selector:'.email',
+					selector:'.email-step',
 					prev_step:'user-info',
-					next_step:'sms-lookup'
+					next_step:'sms-lookup',
+					validators:{
+						'input.email':['min-3','max-32','email'],
+						'input.tos-email':function(merlin,element,step){
+							if(step.dom.find('input.email').val().length){
+								return tc.validate(element,['required']);
+							} else {
+								return {
+									valid:true
+								}
+							}
+						}
+					}
 				},
 				'sms-lookup':{
 					progress:3,
@@ -164,9 +176,9 @@ Give A Minute - Register
 						});
 					},
 					validators:{
-						'input.phone_1':['min-3','max-3',],
-						'input.phone_2':['min-3','max-3',],
-						'input.phone_3':['min-4','max-4',],
+						'input.phone_1':['min-3','max-3','numeric'],
+						'input.phone_2':['min-3','max-3','numeric'],
+						'input.phone_3':['min-4','max-4','numeric'],
 						'input.no_sms':['required']
 					}
 				},
@@ -180,7 +192,10 @@ Give A Minute - Register
 					progress:3,
 					selector:'.sms-results',
 					prev_step:'sms-lookup',
-					next_step:'finish'
+					next_step:'finish',
+					init:function(merlin,dom){
+						
+					}
 				},
 				'sms-no-results':{
 					progress:3,

@@ -54,6 +54,7 @@ tc.merlin.prototype.show_step = function(step){
 		this.current_step.dom.find('input').unbind('keyup change');
 	}
 	this.current_step = this.options.steps[step];
+	this.options.next_button.removeClass('disabled');
 	if(tc.jQ.isFunction(this.current_step)){
 		this.current_step(this);
 		return;
@@ -92,12 +93,13 @@ tc.merlin.prototype.validate = function(validators,force_focus){
 	}
 	this.current_step.errors = [];
 	for(i in this.current_step.inputs){
-		temp_valid = tc.validate(this.current_step.inputs[i].element,this.current_step.inputs[i].validators);
-		if(!temp_valid.valid){
+		if(tc.jQ.isFunction(this.current_step.inputs[i].validators)){
+			temp_valid = this.current_step.inputs[i].validators(this,this.current_step.inputs[i].element,this.current_step).valid;
+		} else {
+			temp_valid = tc.validate(this.current_step.inputs[i].element,this.current_step.inputs[i].validators).valid;
+		}
+		if(!temp_valid){
 			valid = false;
-			//for(j in temp_valid.errors){
-			//	this.current_step.errors.push(temp_valid.errors[j]);
-			//}
 		}
 	}
 	if(valid){
