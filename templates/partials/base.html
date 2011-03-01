@@ -5,7 +5,6 @@
 		<title>{% block title %}GAM Templates{% endblock %}</title>
 		
 		<link rel="stylesheet" href="/static/css/tc.reset.css" type="text/css" media="screen" charset="utf-8" />
-		<link rel="stylesheet" href="/static/css/tc.util.css" type="text/css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" href="/static/css/tc.gam.fontfaces.css" type="text/css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" href="/static/css/tc.gam.main.css" type="text/css" media="screen" charset="utf-8"/>
 		
@@ -13,24 +12,24 @@
 	
 	<body class='earth'>
 		
-		<div class='atmosphere'>
-			<div class='stratosphere clear'>
+		<div class='atmosphere clearfix'>
+			<div class='stratosphere'>
 				<ul>
-					<li><h1><a href='/'>NYC SimpliCity | Give A Minute</a></h1></li>
-					<li><p class='news_and_about'><a href='/blog'>News</a> & <a href='/about'>About</a></p></li>
-					<li>
-						<div class='header-search'>
-							<form action='/home' method='GET'>
-								<input type='text' name='query' />
-								<input type='submit' name='search' value='search' />
-							</form>
-						</div>
+					<li class="home">
+						<a href="/"><span>NYC SimpliCity | Give A Minute</span></a>
 					</li>
-					<li>
-						<div class='userland'>
-							<p><span class='join'><a href='/register'>Join</a></span
-								<span class='login'><a href='/login'>Login</a></span></p>
-						</div>
+					<li class="news-about">
+						<a href='/blog'>News</a> &amp; <a href='/about'>About</a>
+					</li>
+					<li class="search">
+						<form action='/home' method='GET'>
+							<input type='text' name='query' />
+							<input type='submit' name='hd-search-btn' value='Search' />
+						</form>
+					</li>
+					<li class="userland">
+						<div class="join"><a href='/register'>Join</a></div>
+						<div class='login'><a href='/login'>Login</a></div>
 					</li>
 				</ul>
 			</div>
@@ -53,10 +52,9 @@
 			</div>
 		{% endblock %}
 		
-		
 		<div class='seafloor'>
 			<div class='west'>
-				<div class='footer-logos west clear'>
+				<div class='box logos clearfix'>
 					<a href='http://www.localprojects.net' target='_blank'><img src='logo1' alt='Local Projects' /></a>
 					<a href='http://www.ceosforcities.org/' target='_blank'><img src='logo1' alt='CEOs For Cities' /></a>
 					<a href='http://www.rockefellerfoundation.org' target='_blank'><img src='logo1' alt='The Rockefeller Foundation' /></a>
@@ -64,26 +62,27 @@
 					<a href='http://www.knightfoundation.org/' target='_blank'><img src='logo1' alt='The Knight Foundation' /></a>
 					<a href='http://www.nyc.gov/html/planyc2030/html/home/home.shtml' target='_blank'><img src='logo1' alt='PLANYC' /></a>
 				</div>
-				<div class='footer-links west'>
-					<ul>
+				<div class="box">
+					<ul class="sitemap">
 						<li><a href='/about'>About Give a Minute</a></li>
 						<li><a href='/'>About Simplicity</a></li>
 						<li><a href='/news'>News</a></li>
 						<li><a href='/tou'>Terms of Service</a></li>
 						<li><a href='/feedback'>Feedback</a></li>
-				</div>
-				<div class='footer-search east'>
-					<form action='/home' method='GET'>
-						<input type='text' name='query' />
-						<input type='submit' name='search' value='search' />
-					</form>
+					</ul>
+					<div class="search">
+						<form action='/home' method='GET'>
+							<input type='text' name='query' />
+							<input type='submit' name='ft-search-btn' value='Search' />
+						</form>
+					</div>
 				</div>
 			</div>
 			<div class='east'>
-				<div class='footer-facebook'>
-					<p>facebook like button goes here</p>
+				<div class='box social-networking'>
+					<div class="facebook">facebook like button goes here</div>
 				</div>
-				<div class='footer-copyright'>
+				<div class='box copyright'>
 					<p>&copy; Copyright <strong>Give a Minute</strong> 2011</p>
 				</div>
 			</div>

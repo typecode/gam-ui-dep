@@ -5,7 +5,7 @@
 -------------------------------------------------------------------------------*/
 
 html.universe{  }
-head.heavens{  }
+head.heavens{ /* too bad we can't style the heavens */ }
 
 body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 	font-family:DIN,Helvetica; font-size:13px;}
@@ -13,33 +13,104 @@ body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 .west{ float:left; }
 .east{ float:right; }
 
+a { text-decoration:none; }
+
+h1, h2, h3, h4, h5, h6 { font-weight:normal; }
 h1{ font-size:25px; }
-h2{ font-size:20px; }
+h2{ font-size:24px; }
+h3{ font-size:14px; }
 
-div.atmosphere{ width:100%; background-color:#231f20; height:45px; text-align: }
-div.atmosphere .stratosphere{ width:960px;margin:0px auto; display:block; }
-div.atmosphere .stratosphere ul li{ float:left; }
+div.atmosphere{ width:100%; background-color:#231f20; }
+div.atmosphere .stratosphere{ width:960px; margin:0 auto; }
+div.atmosphere .stratosphere > ul > li{ float:left; }
 
-div.continent{ width:960px; margin:0px auto; display:block; }
-	div.headlands{ width:100%; }
+div.continent{ width:960px; margin:0 auto; }
+	div.headlands{ width:100%; position:relative; margin:0 0 20px; }
 	div.midlands{ width:100%; }
 	div.foothills{ width:100%; }
 
-div.seafloor{ width:960px; margin:0px auto; display:block; border-top:2px solid #ebeae8;
-	padding-top:20px;margin-top:20px; }
+/* general controls */
+span.control { text-transform:uppercase; font-style:italic; font-size:9px; }
+span.control a { color:#878786; }
 
-div.seafloor .west{ width:675px; }
-div.seafloor .east{ width:275px; }
+span.counter { color:#e06420; }
 
-div.seafloor .footer-logos { margin-bottom:35px; }
-div.seafloor .footer-links { width:150px; }
-div.seafloor .footer-search { width:525px; }
-div.seafloor .footer-facebook { margin-bottom:35px; }
+p.hint { font-size:11px; color:#a6a5a4; }
+
+input[type="button"],
+input[type="submit"],
+button { text-transform:uppercase; }
+
+.form-pane { overflow:hidden; }
+.form-pane .fields { float:left; }
+.fields label { display:block; }
+
+/* tooltip */
+.gam-tooltip { 
+	background-color:#ffffff; 
+	
+	-moz-box-shadow:0 1px 24px #999999;
+	-webkit-box-shadow:0 1px 24px #999999;
+	box-shadow:0 1px 24px #999999;
+}
+.gam-tooltip .gam-tooltip-hd { background-color:#3d3a36; }
+.gam-tooltip .gam-tooltip-hd h2 { font-family:MetaSerif,Georgia,serif; color:#ccccca; }
+
+/* project header */
+.project-header { padding:16px 0; background-color:#edeceb; border-bottom:1px solid #e6e6e3; }
+
+.project-header .thumb { float:left; width:132px; }
+.project-header .thumb img.proj { margin:0 0 0 16px; }
+
+.project-header .tools { float:right; width:170px; }
+
+.project-header .main { overflow:hidden; }
+.project-header .main h1 { font-family:MetaSerif,Georgia,serif; font-size:38px; }
+.project-header .main .meta { display:block; }
+
+.midlands > .east { width:600px; }
+.midlands > .west { width:320px; }
+.midlands .box { margin:0 0 30px; }
+
+.midlands .box > .hd { margin:0 0 12px; position:relative; overflow:hidden; background-color:#edeceb; border-bottom:1px solid #e6e6e3; }
+.midlands .box > .hd h2 { float:left; text-transform:uppercase; color:#55504b; }
+.midlands .box > .hd h2 .counter { font-size:14px; }
+
+.midlands .box .actions { float:right; }
+.midlands .actions.detached + div { clear:right; }
+
+.midlands .box .bd .sub-hd { margin:0 0 8px; }
+.midlands .box h3 { text-transform:uppercase; color:#a6a5a4; }
+
+/* empty state */
+.empty-state-box { background-color:#d1fdb9; border:1px solid #cae6b5; }
+.empty-state-box.big {  }
+
+/* goals */
+.active-goals { background-color:#ffffff; }
+
+.goal-card { background-color:#fff8dc; border:1px solid #fff3aa; }
+.goal-card p { font-family:MetaSerif,Georgia,serif; font-size:25px; font-style:italic; }
+
+.add-goal.form-pane { background-color:#ebebe8; }
+
+/* conversation */
+.comment-stack > li { margin:0 0 8px; padding:16px; background-color:#ffffff; border:1px solid #e8e6e3; }
+
+/* seafloor */
+div.seafloor{ width:960px; margin:20px auto 0; padding:20px 0 0; border-top:2px solid #ebeae8; }
+
+div.seafloor > .west{ width:675px; }
+div.seafloor > .east{ width:275px; }
+div.seafloor .box { padding:0 0 25px; }
+
+div.seafloor .sitemap { width:150px; float:left; }
+div.seafloor .search { width:525px; float:right; }
 
 /* Home */
 div.continent.home {  }
 div.continent.home .headlands { border-bottom:1px solid #ebeae8; }
-div.home-splash { height:635px;background-color:#3d3936; }
+div.home-splash { height:635px; background-color:#3d3936; }
 div.home-facebook { padding:15px 0px; }
 
 /* Register */
