@@ -118,7 +118,12 @@ div.continent.register {  }
 div.continent.register .merlin{  }
 div.continent.register .merlin .step{ width:100%; }
 div.continent.register .headlands{ border-bottom:1px solid #ebeae8; }
+div.continent.register .merlin-navigation .ca-btn.enabled{ opacity:1.0; }
+div.continent.register .merlin-navigation .ca-btn.disabled{ opacity:0.2; }
+
 div.continent.register .midlands{ border-bottom:1px solid #ebeae8; }
+div.continent.register .midlands input.has-been-focused.valid{ background-color:green; }
+div.continent.register .midlands input.has-been-focused.not-valid{ background-color:red; }
 div.continent.register .merlin .step{ padding:10px 0px 10px 0px; }
 div.continent.register .foothills { padding-top:30px; }
 
