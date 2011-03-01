@@ -69,9 +69,9 @@ button { text-transform:uppercase; }
 .tooltip { 
 	background-color:#ffffff; 
 	
-	-moz-box-shadow:0 1px 24px #999999;
-	-webkit-box-shadow:0 1px 24px #999999;
-	box-shadow:0 1px 24px #999999;
+	-moz-box-shadow:-2px 3px 14px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow:-2px 3px 14px rgba(0, 0, 0, 0.4);
+	box-shadow:-2px 3px 14px rgba(0, 0, 0, 0.4);
 }
 .tooltip .tooltip-hd { background-color:#3d3a36; }
 .tooltip .tooltip-hd h2 { font-family:MetaSerif,Georgia,serif; color:#ccccca; }
