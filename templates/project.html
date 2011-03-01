@@ -14,6 +14,9 @@ Give A Minute - Project
 			<img src="" alt="" class="overlay-tag"/>
 		</div>
 		<div class="tools">
+			<a class="ca-btn join-project" href="#">
+				<span>Join</span>
+			</a>
 			<div class="members">
 				Members <span class="counter">0</span>
 			</div>
@@ -249,7 +252,7 @@ Give A Minute - Project
 							<div class="sub-bd card">
 								<div class="controls">
 									<span class="control"><a href="#">Flag as Inappropiate</a></span>
-									<button>Invite</button>
+									<button class='invite'>Invite</button>
 								</div>
 								<div class="carousel">
 									<div class="scrollable">
@@ -338,7 +341,7 @@ Give A Minute - Project
 							<div class="empty-state-box">
 								<a class="close-btn" href="#"><span>Close</span></a>
 								<p><a href="">Add links</a> to anything, including some of our recommended links like Facebook groups and Kickstarter.</p>
-								<button>Add Link</button>
+								<button class='add-link'>Add Link</button>
 							</div>
 							
 							
@@ -406,6 +409,222 @@ Give A Minute - Project
 	<div class='foothills'>
 
 	</div>
+	
+	<div class='box modal-content introduce-yourself'>
+		<div class='step introduce-message-step'>
+			<form action='#'>
+				<div class='box'>
+					<p><strong>You</strong> say &mdash;</p>
+					<textarea name='introduce-message' class='introduce-message'></textarea>
+				</div>
+				<div class='box'>
+					<h2><strong>Introduce</strong> yourself to the project team.</h2>
+					<p>What's your idea for something this project could do?</p>
+					<button class='submit'>Send</button>
+				</div>
+			</form>
+		</div>
+		
+		<div class='step finish'>
+			<p>Thanks for introducing yourself...</p>
+			<p><img src='/static/images/loader32x32.gif' /></p>
+		</div>
+		
+		<a class='close'>close</a>
+	</div>
+	
+	<div class='box modal-content invite-user'>
+		<div class='step invite-message-step'>
+			<h2>Invite XXXXXX To Your Project</h2>
+			<p>You can send a message to XXXXXX telling them more about your new project and why he or she should join (optional).</p>
+			<form action='#'>
+				<textarea name='invite-message' class='invite-message'></textarea>
+				<button class='submit'>Invite</button>
+			</form>
+		</div>
+		
+		<div class='step finish'>
+			<p>Thanks for sending an invitation...</p>
+			<p><img src='/static/images/loader32x32.gif' /></p>
+		</div>
+		
+		<a class='close'>close</a>
+	</div>
+	
+	<div class='box modal-content add-link'>
+		<div class='step add-link-step'>
+			<h2><strong>Add</strong> a link</h2>
+			<p>You can add links to blogs, news items, or one of our recommended links.</p>
+			<form action='#'>
+				<input name='link-url' class='link-url'></input>
+				<button class='submit'>Add</button>
+			</form>
+			<div class='box'>
+				<a class='partner_link' href='http://www.facebook.com'>Facebook</a>
+				<p>Create a <strong>Facebook group</strong> and link it here. You can have the option to make the feed from the group show up in your group as well.</p>
+			</div>
+			<div class='box'>
+				<a class='partner_link' href='http://www.kickstarter.com'>Kickstarter</a>
+				<p><strong>Raise money</strong> for your project on Kickstarter.</p>
+			</div>
+			<div class='box'>
+				<a class='partner_link' href='http://www.meetup.com'>Meetup</a>
+				<p>A popular way of <strong>managing complex groups</strong>.</p>
+			</div>
+		</div>
+		
+		<div class='step finish'>
+			<p>Thank you for adding a link to this group...</p>
+			<p><img src='/static/images/loader32x32.gif' /></p>
+		</div>
+		
+		<a class='close'>close</a>
+	</div>
+	
 </div>
 
+<script>
+	app_page.features.push(function(app){
+		tc.util.log('Give A Minute: Project');
+		
+		tc.jQ('a.join-project').bind('click',{
+			app:app,
+			source_element:tc.jQ('.modal-content.introduce-yourself'),
+			init:function(modal,callback){
+				var modal_merlin;
+				modal_merlin = new tc.merlin(app,{
+					dom:modal.options.element.find('.introduce-yourself'),
+					first_step:'introduce-message-step',
+					steps:{
+						'introduce-message-step':{
+							selector:'.introduce-message-step',
+							validators:{
+								'textarea.introduce-message':['max-200']
+							},
+							init:function(merlin,dom){
+								var data;
+								data = {merlin:merlin,dom:dom};
+								dom.find('button.submit').bind('click',data,function(e,d){
+									e.preventDefault();
+									if(dom.hasClass('invalid')){
+										return;
+									}
+									tc.timer(1000,function(){
+										modal.hide();
+									});
+									e.data.merlin.show_step('finish');
+								});
+							}
+						},
+						'finish':{
+							selector:'.finish'
+						}
+					}
+				});
+				if(tc.jQ.isFunction(callback)){
+					callback(modal);
+				}
+			}
+		},function(e,d){
+			e.data.app.components.modal.show(e.data);
+		});
+		
+		tc.jQ('button.invite').bind('click',{
+			app:app,
+			source_element:tc.jQ('.modal-content.invite-user'),
+			init:function(modal,callback){
+				var modal_merlin;
+				modal_merlin = new tc.merlin(app,{
+					dom:modal.options.element.find('.invite-user'),
+					first_step:'invite-message-step',
+					steps:{
+						'invite-message-step':{
+							selector:'.invite-message-step',
+							validators:{
+								'textarea.invite-message':['max-200']
+							},
+							init:function(merlin,dom){
+								var data;
+								data = {merlin:merlin,dom:dom};
+								dom.find('button.submit').bind('click',data,function(e,d){
+									e.preventDefault();
+									if(dom.hasClass('invalid')){
+										return;
+									}
+									tc.timer(1000,function(){
+										modal.hide();
+									});
+									e.data.merlin.show_step('finish');
+								});
+							}
+						},
+						'finish':{
+							selector:'.finish'
+						}
+					}
+				});
+				if(tc.jQ.isFunction(callback)){
+					callback(modal);
+				}
+			}
+		},function(e,d){
+			e.data.app.components.modal.show(e.data);
+		});
+		
+		tc.jQ('button.add-link').bind('click',{
+			app:app,
+			source_element:tc.jQ('.modal-content.add-link'),
+			init:function(modal,callback){
+				var modal_merlin;
+				modal_merlin = new tc.merlin(app,{
+					dom:modal.options.element.find('.add-link'),
+					first_step:'add-link-step',
+					steps:{
+						'add-link-step':{
+							selector:'.add-link-step',
+							validators:{
+								'input.link-url':['max-200','url']
+							},
+							init:function(merlin,dom){
+								var data;
+								data = {merlin:merlin,dom:dom};
+								dom.find('a.partner_link').bind('click',data,function(e,d){
+									e.preventDefault();
+									if(dom.hasClass('invalid')){
+										return;
+									}
+									tc.util.dump(e.target.href);
+									window.open(e.target.href);
+									tc.timer(1000,function(){
+										modal.hide();
+									});
+									e.data.merlin.show_step('finish');
+								});
+								dom.find('button.submit').bind('click',data,function(e,d){
+									e.preventDefault();
+									if(dom.hasClass('invalid')){
+										return;
+									}
+									tc.timer(1000,function(){
+										modal.hide();
+									});
+									e.data.merlin.show_step('finish');
+								});
+							}
+						},
+						'finish':{
+							selector:'.finish'
+						}
+					}
+				});
+				if(tc.jQ.isFunction(callback)){
+					callback(modal);
+				}
+			}
+		},function(e,d){
+			e.data.app.components.modal.show(e.data);
+		});
+		
+	});
+</script>
 {% endblock continent %}

@@ -3,13 +3,30 @@ if(!tc){ var tc = {}; }
 tc.merlin = makeClass();
 
 tc.merlin.prototype.options = {
-	selector:null
+	dom:null,
+	progress_element:null,
+	next_button:null,
+	back_button:null,
+	watch_keypress:true,
+	first_step:'start',
+	steps:{
+		'start':{
+			progress_selector:'.1',
+			selector:'.start',
+			prev_step:null,
+			next_step:null
+		}
+	}
 }
 
 tc.merlin.prototype.init = function(app,options){
 	tc.util.log('tc.merlin.init');
 	this.options = tc.jQ.extend(this.options,options);
-	this.dom = tc.jQ(options.selector);
+	this.app = app;
+	if(options.dom instanceof String){
+		options.dom = tc.jQ(options.dom);
+	}
+	this.dom = options.dom;
 	this.event_data = {app:app,me:this};
 	this.handle_steps();
 	this.handle_controls(options.controls);
@@ -51,10 +68,15 @@ tc.merlin.prototype.handle_steps = function(){
 tc.merlin.prototype.show_step = function(step){
 	tc.util.log('tc.merlin.show_step');
 	if(this.current_step){
-		this.current_step.dom.find('input').unbind('keyup change');
+		this.current_step.dom.find('input, textarea').unbind('keyup change');
+	}
+	if(!this.options.steps[step]){
+		return;
 	}
 	this.current_step = this.options.steps[step];
-	this.options.next_button.removeClass('disabled');
+	if(this.options.next_button){
+		this.options.next_button.removeClass('disabled');
+	}
 	if(this.current_step.progress_selector){
 		if(this.options.progress_element){
 			this.options.progress_element.find(this.current_step.progress_selector).addClass('cur').siblings().removeClass('cur');
@@ -64,8 +86,8 @@ tc.merlin.prototype.show_step = function(step){
 		this.current_step(this);
 		return;
 	}
-	this.current_step.dom.show().siblings().hide();
-	this.current_step.dom.find('input')
+	this.current_step.dom.show().siblings('.step').hide();
+	this.current_step.dom.find('input, textarea')
 		.one('focus',function(e){
 			tc.jQ(e.target).addClass('has-been-focused').removeClass('valid invalid');
 		}).bind('keyup change',this.event_data,this.handlers.keypress);
@@ -87,6 +109,11 @@ tc.merlin.prototype.validate = function(validators,force_focus){
 	if(!this.current_step.inputs){
 		this.current_step.inputs = {};
 		for(i in validators){
+			
+			tc.util.dump(this.current_step.dom);
+			tc.util.dump(i);
+			tc.util.dump(this.current_step.dom.find(i));
+				
 			this.current_step.inputs[i] = {
 				element:this.current_step.dom.find(i),
 				validators:validators[i]
@@ -111,11 +138,13 @@ tc.merlin.prototype.validate = function(validators,force_focus){
 		this.dom.trigger('merlin-step-valid',{
 			step:this.current_step
 		});
+		this.current_step.dom.removeClass('invalid').addClass('valid');
 		return true;
 	} else {
 		this.dom.trigger('merlin-step-invalid',{
 			step:this.current_step
 		});
+		this.current_step.dom.removeClass('valid').addClass('invalid');
 		return false;
 	}
 }

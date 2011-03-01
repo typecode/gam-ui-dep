@@ -8,7 +8,8 @@ html.universe{ overflow-y: scroll; }
 head.heavens{ /* too bad we can't style the heavens */ }
 
 body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
-	font-family:DIN,Helvetica; font-size:13px;}
+	font-family:DIN,Helvetica; font-size:13px; }
+div.exosphere{  }
 
 .west{ float:left; }
 .east{ float:right; }
@@ -39,8 +40,6 @@ div.atmosphere .stratosphere li.search input[type=submit]:hover { color: #F3F2F0
 div.atmosphere .stratosphere li.userland { margin-top: 15px; text-align: right; position: absolute; top: 0; right: 0; }
 div.atmosphere .stratosphere li.userland div { float:right; font-weight: bold; font-size: 13px; line-height: 13px; }
 div.atmosphere .stratosphere li.userland div.join { margin-right: 45px; }
-
-
 
 div.continent{ width:960px; margin:0 auto; }
 	div.headlands{ width:100%; position:relative; margin:0 0 20px; }
@@ -75,6 +74,7 @@ button { text-transform:uppercase; }
 .tooltip .tooltip-hd h2 { font-family:MetaSerif,Georgia,serif; color:#ccccca; }
 
 /* modal */
+.modal-content{ display:none; }
 .modal {
 	display:none;	
 	z-index:10000;

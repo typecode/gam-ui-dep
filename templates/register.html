@@ -118,7 +118,7 @@ Give A Minute - Register
 	app_page.features.push(function(app){
 		tc.util.log('Give A Minute: Register');
 		app.components.merlin = new tc.merlin(app,{
-			selector:'.merlin',
+			dom:'.merlin',
 			progress_element:tc.jQ('.merlin-progress'),
 			next_button:tc.jQ('.ca-btn'),
 			back_button:tc.jQ('.foothills .back'),
@@ -145,20 +145,8 @@ Give A Minute - Register
 					},
 					init:function(merlin,dom){
 						dom.find('a.real-names').unbind('click').bind('click',function(e,d){
-							$("#modal").overlay({
-								top: 260,
-								left: 'center',
-								speed:75,
-								mask: {
-									color: '#ebecff',
-									opacity: 0.9
-								},
-								closeOnClick: false,
-								load: true
-							});
+							merlin.app.components.modal.show('');
 						});
-						
-						
 					}
 				},
 				'email':{
