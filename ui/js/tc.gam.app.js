@@ -13,13 +13,6 @@ tc.app.prototype.init = function(page){
 			}
 		}
 	}
-	
-	//tc.jQ('a').history(function(event,hash){
-	//	_me.events.trigger('history-event',{
-	//	  event:event,
-	//	  hash:hash
-	//	});
-	//});
 }
 
 tc.app.prototype.components = {};

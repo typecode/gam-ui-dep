@@ -55,6 +55,11 @@ tc.merlin.prototype.show_step = function(step){
 	}
 	this.current_step = this.options.steps[step];
 	this.options.next_button.removeClass('disabled');
+	if(this.current_step.progress_selector){
+		if(this.options.progress_element){
+			this.options.progress_element.find(this.current_step.progress_selector).addClass('cur').siblings().removeClass('cur');
+		}
+	}
 	if(tc.jQ.isFunction(this.current_step)){
 		this.current_step(this);
 		return;
@@ -118,10 +123,12 @@ tc.merlin.prototype.validate = function(validators,force_focus){
 tc.merlin.prototype.handlers = {
 	a_click:function(e,d){
 		tc.util.log('tc.merlin.handlers.a_click');
+		e.preventDefault();
 		e.data.me.show_step(e.target.href.split('#')[1]);
 	},
 	last_step:function(e,d){
 		tc.util.log('tc.merlin.handlers.last_step');
+		e.preventDefault();
 		if(e.data.me.current_step && e.data.me.current_step.prev_step){
 			e.data.me.show_step(e.data.me.current_step.prev_step);
 		}
@@ -129,6 +136,7 @@ tc.merlin.prototype.handlers = {
 	next_step:function(e,d){
 		tc.util.log('tc.merlin.handlers.next_step');
 		var valid;
+		e.preventDefault();
 		valid = true;
 		if(e.data.me.current_step.validators){
 			valid = e.data.me.validate(e.data.me.current_step.validators,true);
@@ -154,7 +162,6 @@ tc.merlin.prototype.handlers = {
 		if(e.data.me.options.next_button){
 			e.data.me.options.next_button.removeClass('disabled').addClass('enabled');
 		}
-		
 	},
 	invalid:function(e,d){
 		tc.util.log('tc.merlin.handlers.invalid');

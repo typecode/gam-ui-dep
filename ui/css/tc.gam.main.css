@@ -56,6 +56,18 @@ button { text-transform:uppercase; }
 .gam-tooltip .gam-tooltip-hd { background-color:#3d3a36; }
 .gam-tooltip .gam-tooltip-hd h2 { font-family:MetaSerif,Georgia,serif; color:#ccccca; }
 
+/* modal */
+.cloud {
+	display:none;	
+	z-index:10000;
+	background-color:white;
+	width:675px;	
+	min-height:200px;
+	border:1px solid #666;
+	-moz-box-shadow:3px 3px 1px 1px #aaa;
+	-webkit-box-shadow: 3px 3px 1px 1px #aaa;	
+}
+
 /* project header */
 .project-header { padding:16px 0; background-color:#edeceb; border-bottom:1px solid #e6e6e3; }
 
@@ -118,8 +130,9 @@ div.continent.register {  }
 div.continent.register .merlin{  }
 div.continent.register .merlin .step{ width:100%; }
 div.continent.register .headlands{ border-bottom:1px solid #ebeae8; }
-div.continent.register .merlin-navigation .ca-btn.enabled{ opacity:1.0; }
-div.continent.register .merlin-navigation .ca-btn.disabled{ opacity:0.2; }
+div.continent.register .headlands .merlin-progress .cur{ font-weight:bold; }
+div.continent.register .headlands .ca-btn.enabled{ opacity:1.0; }
+div.continent.register .headlands .ca-btn.disabled{ opacity:0.2; }
 
 div.continent.register .midlands{ border-bottom:1px solid #ebeae8; }
 div.continent.register .midlands input.has-been-focused.valid{ background-color:green; }

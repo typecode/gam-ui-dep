@@ -12,11 +12,11 @@ Give A Minute - Register
 			<h3>Share your ideas. Build projects. Make a change.</h3>
 		</div>
 		<div class='east'>
-			<div class='merlin-navigation'>
-				<div class='box progress clearfix'>
+			<div class='box'>
+				<div class='box merlin-progress clearfix'>
 					<div class='indicator 1 west'>1</div>
-					<div class='indicator 1 west'>2</div>
-					<div class='indicator 1 west'>3</div>
+					<div class='indicator 2 west'>2</div>
+					<div class='indicator 3 west'>3</div>
 				</div>
 				<div class='box next'>
 					<a class="ca-btn" href="#">
@@ -40,7 +40,7 @@ Give A Minute - Register
 			</div>
 			
 			<div class='step user-info clearfix' style='display:none;'>
-				<p>Give a Minute users use their real names. <a href='#'><strong>Here's Why</strong></a></p>
+				<p>Give a Minute users use their real names. <a href='#' class='real-names'><strong>Here's Why</strong></a></p>
 				
 				<input value='' type='text' name='f_name' id='f_name' class='f_name'/>
 				<input value='' type='text' name='l_name' id='l_name' class='l_name'/>
@@ -111,6 +111,9 @@ Give A Minute - Register
 	<div class='foothills'>
 		<a class='back' href='#'><p>&larr; Back</p></a>
 	</div>
+	
+	
+	
 </div>
 
 <script>
@@ -118,20 +121,20 @@ Give A Minute - Register
 		tc.util.log('Give A Minute: Register');
 		app.components.merlin = new tc.merlin(app,{
 			selector:'.merlin',
-			controls:tc.jQ('.merlin-controls'),
+			progress_element:tc.jQ('.merlin-progress'),
 			next_button:tc.jQ('.ca-btn'),
 			back_button:tc.jQ('.foothills .back'),
 			watch_keypress:true,
 			first_step:'start',
 			steps:{
 				'start':{
-					progress:1,
+					progress_selector:'.1',
 					selector:'.start',
 					prev_step:null,
 					next_step:'user-info'
 				},
 				'user-info':{
-					progress:2,
+					progress_selector:'.2',
 					selector:'.user-info',
 					prev_step:'start',
 					next_step:'email',
@@ -141,10 +144,27 @@ Give A Minute - Register
 						'input.email':['max-32','min-3','email','required'],
 						'input.password':['password-20','required'],
 						'input.tos-user-info':['required']
+					},
+					init:function(merlin,dom){
+						dom.find('a.real-names').unbind('click').bind('click',function(e,d){
+							$("#modal").overlay({
+								top: 260,
+								left: 'center',
+								speed:75,
+								mask: {
+									color: '#ebecff',
+									opacity: 0.9
+								},
+								closeOnClick: false,
+								load: true
+							});
+						});
+						
+						
 					}
 				},
 				'email':{
-					progress:2,
+					progress_selector:'.2',
 					selector:'.email-step',
 					prev_step:'user-info',
 					next_step:'sms-lookup',
@@ -162,7 +182,7 @@ Give A Minute - Register
 					}
 				},
 				'sms-lookup':{
-					progress:3,
+					progress_selector:'.3',
 					selector:'.sms-lookup',
 					prev_step:'email',
 					next_step:'finish',
@@ -183,13 +203,13 @@ Give A Minute - Register
 					}
 				},
 				'sms-process':{
-					progress:3,
+					progress_selector:'.3',
 					selector:'.sms-process',
 					prev_step:'sms-lookup',
 					next_step:null
 				},
 				'sms-results':{
-					progress:3,
+					progress_selector:'.3',
 					selector:'.sms-results',
 					prev_step:'sms-lookup',
 					next_step:'finish',
@@ -198,19 +218,19 @@ Give A Minute - Register
 					}
 				},
 				'sms-no-results':{
-					progress:3,
+					progress_selector:'.3',
 					selector:'.sms-no-results',
 					prev_step:'sms-lookup',
 					next_step:'finish'
 				},
 				'sms-already-used':{
-					progress:3,
+					progress_selector:'.3',
 					selector:'.sms-already-used',
 					prev_step:'sms-lookup',
 					next_step:'finish'
 				},
 				'finish':{
-					progress:3,
+					progress_selector:'.3',
 					selector:'.finish',
 					prev_step:null,
 					next_step:null,
