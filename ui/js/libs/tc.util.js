@@ -13,9 +13,9 @@ if(!tc){ var tc = {}; }
 	tc.util.log = function(message,level){
 		if (typeof console != "undefined" && typeof console.debug != "undefined") {
 			if(!level){
-				console.info(message)
+				console.info(message);
 			} else {
-				console[level](message)
+				console[level](message);
 			}
 		}
 	}
