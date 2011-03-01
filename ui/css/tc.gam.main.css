@@ -15,12 +15,16 @@ body.earth{ background:none repeat scroll 0 0 #F3F2F0; text-align:left;
 
 a { text-decoration:none; }
 
-h1, h2, h3, h4, h5, h6 { font-weight:normal; }
-h1{ font-size:25px; }
-h2{ font-size:24px; }
+/* headings */
+h1, h2, h3, h4, h5, h6, .above-h1 { font-weight:normal; color: #55504b; }
+h1{ font-size:42px; line-height: 42px; font-weight: bold; margin-bottom: 18px; letter-spacing: -1px;}
+h2{ font-size:24px; line-height: 30px; }
 h3{ font-size:14px; }
+.above-h1 { font-size: 13px; line-height: 13px; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; display: block; letter-spacing: 1px;}
+.above-h1 em { font-weight: normal; font-style: italic; text-transform: none; }
 
-div.atmosphere{ width:100%; background-color:#231f20; height: 45px; }
+/* top bar */
+div.atmosphere{ width:100%; background-color:#231f20; height: 45px; margin-bottom: 35px; }
 div.atmosphere .stratosphere{ width:960px; margin:0 auto; position: relative;}
 div.atmosphere .stratosphere > ul > li{ float:left; }
 div.atmosphere .stratosphere li a { color: #c9b577; text-transform: uppercase;}
@@ -85,6 +89,13 @@ button { text-transform:uppercase; }
 	-webkit-box-shadow: 3px 3px 1px 1px #aaa;	
 }
 
+/* wizard (merlin) */
+.merlin-progress .indicator { display:block; height: 50px; width: 44px; margin: 0 15px; text-align: center; position: relative; }
+.merlin-progress .indicator.last { margin-right: 0; }
+.merlin-progress .indicator .label { position: absolute; top: 0; left: 0; width: 45px; font-size: 9px; color: #878786; text-transform: uppercase; font-weight: bold;}
+.merlin-progress .indicator .num { position:absolute; bottom: 0; left: 6px; text-align: center; color: #f3f2f0; font-size: 20px; line-height: 20px; font-weight: bold; background-color: #878786; border: 1px solid #b6b4b1; width: 20px; height: 20px; padding: 4px 5px 6px 5px; -moz-border-radius: 16px; -webkit-border-radius: 16px; -khtml-border-radius: 16px; border-radius: 16px; display: block; float: left; }
+.merlin-progress .indicator.inactive .num { background-color: #d1d1cf; }
+
 /* tab view */
 /* ... */
 
@@ -147,6 +158,7 @@ div.seafloor .search { width:525px; float:right; margin-top: 6px;}
 div.seafloor .search input { border: 1px solid #b9b8b6; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; font-family: DIN, Verdana, Arial, sans-serif; }
 div.seafloor .search input[type=text] {background-color: #fff; color: #878786; font-size: 16px; line-height: 16px; padding: 8px; margin-right: 8px;}
 div.seafloor .search input[type=submit] {background-color: #e5e4e1; color: #878786; font-weight: bold; font-size: 16px; line-height: 16px; padding: 10px; }
+div.seafloor .search input[type=submit]:hover {color: #F3F2F0; background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.04, rgb(179,178,177)),color-stop(0.76, rgb(201,201,201))); background-image: -moz-linear-gradient(center top,rgb(179,178,177) 4%,rgb(201,201,201) 76%); -webkit-box-shadow: 1px 1px 4px #dbdad8; -moz-box-shadow: 1px 1px 4px #dbdad8; box-shadow: 1px 1px 4px #dbdad8;}
 div.seafloor .social-networking { margin-top: 3px; padding-bottom: 0; }
 div.seafloor .copyright { margin-top: 6px; }
 
@@ -180,3 +192,10 @@ div.continent.login .midlands .west .oauth-login{ float:right;width:; }
 div.continent.login .midlands .east { width:374px; border-left:1px solid #ebeae8;
 	padding:40px 0px;  }
 div.continent.login .midlands .east p { margin-left:35px; }
+
+/* Create */
+div.continent.create {}
+div.continent.create .headlands > .west { width: 600px; }
+div.continent.create .headlands > .east { width: 360px; text-align: right}
+div.continent.create .midlands .step > .west { width: 160px; }
+div.continent.create .midlands .step > .east { width: 800px; }
