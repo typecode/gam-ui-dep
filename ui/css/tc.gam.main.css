@@ -380,3 +380,25 @@ div.continent.about .midlands blockquote.pullquote p { display: block; margin: 4
 div.continent.about .midlands > .east > .west { width: 290px; margin-right: 35px; }
 div.continent.about .midlands > .east > .east { width: 290px; }
 div.continent.about .midlands > .east > .east p { font: 16px/24px DIN, Helvetica, Arial, sans-serif; }
+
+
+/* About page */
+div.continent.tou { }
+div.continent.tou .headlands .above-h1 { text-transform: none; letter-spacing: 0; margin-left: 5px; }
+div.continent.tou .headlands h1 { font: 46px/46px Georgia, Times, Times New Roman, serif; font-weight: normal; }
+div.continent.tou .midlands { border-top:1px solid #ebeae8; font-size: 16px; line-height: 20px; color: #55504b; padding: 55px 0 25px 0;}
+div.continent.tou .midlands > .west { width: 620px; padding-right: 40px; margin-right: 30px; border-right: 1px solid #ebeae8;  }
+div.continent.tou .midlands > .east { width: 265px; }
+div.continent.tou .midlands p { font: 16px/24px Georgia, Times, Times New Roman, serif; margin-bottom: 24px; }
+div.continent.tou .midlands h2 { font-size: 19px; line-height: 24px; position: relative; top: -3px; text-transform: uppercase; margin-top: 48px; }
+div.continent.tou .midlands > .west a { color: #55504b; border-bottom: 1px solid #d2cac2; }
+div.continent.tou .midlands > .west a:hover { border-bottom-color: #55504b; }
+div.continent.tou .midlands > .east h2 { font-size: 14px; color: #a6a5a4; margin-top: 0;}
+div.continent.tou .midlands > .east,
+div.continent.tou .midlands > .east p { font: 16px/22px DIN, Helvetica, Arial, sans-serif; margin-bottom: 0;}
+div.continent.tou .midlands > .east p { width: 75%; }
+div.continent.tou .midlands > .east a { color: #55504b; }
+div.continent.tou .midlands > .east a:hover { border-bottom: 1px solid #55504b; }
+div.continent.tou .midlands > .east .archive { margin-top: 50px; }
+div.continent.tou .midlands div.standout { margin: 0 0 24px 0; padding: 8px 20px 12px 30px; font-size: 18px; line-height: 20px; background-color: #e5e4e1; text-indent: 5px; }
+div.continent.tou .midlands div.standout strong { float: left; background: url(../images/bg_hintArrowTOU.png) center left no-repeat #e5e4e1; font-size: 11px; font-weight: bold; color: #a6a5a4; text-transform: uppercase; margin-right: 3px; padding-left: 30px; margin-left: -30px; text-indent: 0; position: relative; top: 1px; }
