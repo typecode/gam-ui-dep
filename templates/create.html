@@ -18,7 +18,7 @@
 				</div>
 				<div class='box next'>
 					<a class="ca-btn" href="#">
-						<span>Let's Do it!</span>
+						<span>Next step</span>
 					</a>
 				</div>
 			</div>
@@ -28,12 +28,13 @@
 	<div class='midlands'>
 		<form class='merlin' action='/register' method='POST'>
 			
-			<div class='step start clearfix'>
+			<div class='step start describe clearfix'>
 				<div class="west">
 					<div class="thumb">
 						<img src="http://placehold.it/115x115" alt="" class="proj"/>
 						<span class="overlay-tag"></span>
 					</div>
+					<div class="addphoto">&#43; <span>Add A Photo</span></div>
 				</div>
 				
 				<div class="east">
@@ -41,7 +42,7 @@
 						<label for='name'><strong>Name</strong> your project:</label>
 						<input value='Name' type='text' name='name' id='name' class='name'/>
 						<span class="charlimit">50</span>
-						<div class="below-input clearfix"><span class="createdby">Created by</span><span class="user-name">Shawna Tearsdille</span><span class="edit">Edit</span></span></div>
+						<div class="below-input clearfix"><span class="createdby">Created by</span><span class="user-name">Shawna Tearsdille</span><span class="edit">Edit</span></div>
 					</div>
 					<div class="row clearfix">
 						<label for='describe'><strong>Describe</strong> your project well so that people can find it and join to change!</label>
@@ -51,50 +52,27 @@
 					<div class="row clearfix">
 						<label for='keywords'><strong>Add</strong> keywords to help people find your project:</label>
 						<input value='Seperate keywords by comma' type='text' name='keywords' id='keywords' class='keywords'/>
+						<div class="below-input clearfix">
+							<span class="suggested-keywords-label">Suggested Keywords</span>
+							<span class="suggested-keywords">
+								<span>Lorem</span>
+								<span>ipsum</span>
+								<span>dolor</span>
+								<span>amet</span>
+							</span>
+						</div>
 					</div>
 				</div>
-			</div>
+			</div><!--end step-->
 			
-			<div class='step user-info clearfix' style='display:none;'>
-				<p>Give a Minute users use their real names. <a href='#' class='real-names'><strong>Here's Why</strong></a></p>
+			<div class='step location clearfix' style='display:none;'>
+				<div class="west">
+				</div>
 				
-				<input value='' type='text' name='f_name' id='f_name' class='f_name'/>
-				<input value='' type='text' name='l_name' id='l_name' class='l_name'/>
-				<label for='email'>Email</label>
-				<input value='' type='text' name='email' id='email' class='email'/>
-				<label for='password'>Password</label>
-				<input value='' type='password' name='password' id='password' class='password'/>
-				
-				<input type='checkbox' name='tos-user-info' id='tos-user-info' class='tos-user-info'/>
-				<label for='tos-user-info'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
-			</div>
+				<div class="east">
+				</div>
+			</div><!--end step-->
 			
-			
-			<div class='step sms-process clearfix ' style='display:none;'>
-				<p>Finding SMS submissions...</p>
-				<p><img src='/static/images/loader32x32.gif' /></p>
-			</div>
-			
-			<div class='step sms-results clearfix ' style='display:none;'>
-				<p><strong>We found 2 ideas from that telephone number.</strong></p>
-				<p>We'll add these ideas to your profile and link any new ideas that come in from that number</p>
-			</div>
-			
-			<div class='step sms-no-results clearfix ' style='display:none;'>
-				<p>We couldn't find an ideas associated with</p>
-				<p>(XXX) XXX-XXXX</p>
-			</div>
-			
-			<div class='step sms-already-used clearfix ' style='display:none;'>
-				<p>The number</p>
-				<p>(XXX) XXX-XXXX</p>
-				<p>is already associated with an account.</p>
-			</div>
-			
-			<div class='step finish clearfix ' style='display:none;'>
-				<p>Thank you for joining.</p>
-				<p><img src='/static/images/loader32x32.gif' /></p>
-			</div>
 		</form>
 	</div>
 
