@@ -38,7 +38,7 @@ div.atmosphere .stratosphere li.search { margin-top: 7px; }
 div.atmosphere .stratosphere li.search input { border: 1px solid #312e2e; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;}
 div.atmosphere .stratosphere li.search input[type=text] { width: 214px; margin-right: 8px; background-color: transparent; color: #736b6d; font: 10px/10px Verdana, Helvetica, Arial, sans-serif; padding: 6px;}
 div.atmosphere .stratosphere li.search input[type=text]:focus { background-color: #302b2c; color:  }
-div.atmosphere .stratosphere li.search input[type=submit] { background-color: #302b2c; color: #cab577; font: 13px/13px DIN, Helvetica, Arial, sans-serif; padding: 5px; text-transform: uppercase;}
+div.atmosphere .stratosphere li.search input[type=submit] { background-color: #302b2c; color: #cab577; font: 13px/13px DIN, Helvetica, Arial, sans-serif; padding: 5px; text-transform: uppercase; cursor: pointer; }
 div.atmosphere .stratosphere li.search input[type=submit]:hover { color: #F3F2F0 }
 div.atmosphere .stratosphere li.userland { margin-top: 15px; text-align: right; position: absolute; top: 0; right: 0; }
 div.atmosphere .stratosphere li.userland div { float:right; font-weight: bold; font-size: 13px; line-height: 13px; }
@@ -159,10 +159,12 @@ div.seafloor .sitemap { width:150px; float:left; margin-bottom: 30px;}
 div.seafloor .sitemap a {color: #55504b }
 div.seafloor .sitemap a:hover { border-bottom: 1px solid #d2cac2; }
 div.seafloor .search { width:525px; float:right; margin-top: 6px;}
-div.seafloor .search input { border: 1px solid #b9b8b6; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; font-family: DIN, Verdana, Arial, sans-serif; }
+div.seafloor .search input { border: 1px solid #b9b8b6; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; font-family: DIN, Verdana, Arial, sans-serif; -webkit-transition: 100ms ease-in;  -moz-transition: 100ms ease-in; -o-transition: 100ms ease-in; transition: 100ms ease-in;  }
+div.seafloor .search input:hover,
+div.seafloor .search input:focus {-webkit-box-shadow: 1px 1px 4px #cfcecc; -moz-box-shadow: 1px 1px 4px #cfcecc; box-shadow: 1px 1px 4px #cfcecc;}
 div.seafloor .search input[type=text] {background-color: #fff; color: #878786; font-size: 16px; line-height: 16px; padding: 8px; margin-right: 8px;}
-div.seafloor .search input[type=submit] {background-color: #e5e4e1; color: #878786; font-weight: bold; font-size: 16px; line-height: 16px; padding: 10px; }
-div.seafloor .search input[type=submit]:hover {color: #F3F2F0; background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.04, rgb(179,178,177)),color-stop(0.76, rgb(201,201,201))); background-image: -moz-linear-gradient(center top,rgb(179,178,177) 4%,rgb(201,201,201) 76%); -webkit-box-shadow: 1px 1px 4px #dbdad8; -moz-box-shadow: 1px 1px 4px #dbdad8; box-shadow: 1px 1px 4px #dbdad8;}
+div.seafloor .search input[type=submit] {background-color: #e5e4e1; color: #878786; font-weight: bold; font-size: 16px; line-height: 16px; padding: 10px; cursor: pointer; }
+div.seafloor .search input[type=submit]:hover {color: #F3F2F0; background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.04, rgb(179,178,177)),color-stop(0.76, rgb(201,201,201))); background-image: -moz-linear-gradient(center top,rgb(179,178,177) 4%,rgb(201,201,201) 76%);}
 div.seafloor .social-networking { margin-top: 3px; padding-bottom: 0; }
 div.seafloor .copyright { margin-top: 6px; }
 
