@@ -11,7 +11,7 @@ Give A Minute - Project
 	<div class='headlands clearfix project-header'>
 		<div class="thumb">
 			<img src="http://placehold.it/100x100" alt="" class="proj"/>
-			<img src="" alt="" class="overlay-tag"/>
+			<span class="overlay-tag"></span>
 		</div>
 		<div class="tools">
 			<a class="ca-btn join-project" href="#">
@@ -451,11 +451,13 @@ Give A Minute - Project
 
 	</div>
 	
-	<div class='box modal-content introduce-yourself'>
+	<div class='modal-content introduce-yourself'>
 		<div class='step introduce-message-step'>
 			<form action='#'>
-				<div class='box'>
-					<p><strong>You</strong> say &mdash;</p>
+				<div class='box note-card'>
+					<cite class="note-meta-hd">
+						<strong>You</strong> say &ndash;
+					</cite>
 					<textarea name='introduce-message' class='introduce-message'></textarea>
 				</div>
 				<div class='box'>
@@ -471,10 +473,10 @@ Give A Minute - Project
 			<p><img src='/static/images/loader32x32.gif' /></p>
 		</div>
 		
-		<a class='close'>close</a>
+		<a class='close' href="#"><span>close</span></a>
 	</div>
 	
-	<div class='box modal-content invite-user'>
+	<div class='modal-content invite-user'>
 		<div class='step invite-message-step'>
 			<h2>Invite XXXXXX To Your Project</h2>
 			<p>You can send a message to XXXXXX telling them more about your new project and why he or she should join (optional).</p>
@@ -489,10 +491,10 @@ Give A Minute - Project
 			<p><img src='/static/images/loader32x32.gif' /></p>
 		</div>
 		
-		<a class='close'>close</a>
+		<a class='close' href="#"><span>close</span></a>
 	</div>
 	
-	<div class='box modal-content add-link'>
+	<div class='modal-content add-link'>
 		<div class='step add-link-step'>
 			<h2><strong>Add</strong> a link</h2>
 			<p>You can add links to blogs, news items, or one of our recommended links.</p>
