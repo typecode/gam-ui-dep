@@ -200,6 +200,8 @@ div.continent.register .midlands .start .social-login a.login-facebook { backgro
 div.continent.register .midlands .start .social-login a.login-twitter { background-image: url(../images/signin_twitter.png) }
 div.continent.register .midlands .start .social-login span { visibility: hidden }
 
+div.continent.register .foothills .back { display:block; font-size: 18px; height: 20px; font-weight: bold; line-height: 18px; color: #55504b; text-transform: uppercase; padding-left: 21px; background: url(../images/control_backArrow.png) left center no-repeat transparent;}
+div.continent.register .foothills .back:hover span { border-bottom: 1px solid #55504b; }
 div.continent.register .foothills { margin-bottom: 250px; }
 
 /* Login */
