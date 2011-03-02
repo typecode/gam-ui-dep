@@ -34,26 +34,26 @@ tc.gam.project.prototype.handlers = {
 	widget_show:function(e,d){
 		switch(d.name){
 			case 'members':
-				e.data.project.components.goals.hide();
-				e.data.project.components.goals_add.hide();
-				e.data.project.components.conversation.hide();
+				e.data.project.components.goals.hide(false);
+				e.data.project.components.goals_add.hide(false);
+				e.data.project.components.conversation.hide(false);
 				break;
 			case 'goals_add':
-				e.data.project.components.goals.hide();
-				e.data.project.components.members.hide();
-				e.data.project.components.conversation.hide();
+				e.data.project.components.goals.hide(false);
+				e.data.project.components.members.hide(false);
+				e.data.project.components.conversation.hide(false);
 				break;
 		}
 	},
 	widget_hide:function(e,d){
 		switch(d.name){
 			case 'members':
-				e.data.project.components.goals.show();
-				e.data.project.components.conversation.show();
+				e.data.project.components.goals.show(false);
+				e.data.project.components.conversation.show(false);
 				break;
 			case 'goals_add':
-				e.data.project.components.goals.show();
-				e.data.project.components.conversation.show();
+				e.data.project.components.goals.show(false);
+				e.data.project.components.conversation.show(false);
 				break;
 		}
 	}
@@ -121,7 +121,7 @@ tc.gam.widgets.members.prototype.hide = function(){
 }
 tc.gam.widgets.members.prototype.handlers = {
 	back:function(e,d){
-		e.data.me.hide();
+		e.data.me.hide(true);
 	}
 }
 
@@ -202,7 +202,7 @@ tc.gam.widgets.goals_add.prototype.hide = function(){
 }
 tc.gam.widgets.goals_add.prototype.handlers = {
 	back:function(e,d){
-		e.data.project.components.goals_add.hide();
+		e.data.project.components.goals_add.hide(true);
 	}
 }
 
