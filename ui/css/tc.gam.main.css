@@ -68,13 +68,16 @@ button { text-transform:uppercase; }
 /* tooltip */
 .tooltip { 
 	background-color:#ffffff; 
-	
+	border:1px solid #dbdad9;
+	border:1px solid rgba(165,165,165,0.4);
 	-moz-box-shadow:-2px 3px 14px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow:-2px 3px 14px rgba(0, 0, 0, 0.4);
 	box-shadow:-2px 3px 14px rgba(0, 0, 0, 0.4);
+	font-family:MetaSerif,Georgia,serif;
 }
-.tooltip .tooltip-hd { background-color:#3d3a36; }
-.tooltip .tooltip-hd h2 { font-family:MetaSerif,Georgia,serif; color:#ccccca; }
+.tooltip .tooltip-hd { background-color:#3d3a36; padding:5px 15px;}
+.tooltip .tooltip-hd h2 { color:#ccccca; font-size:19px;}
+.tooltip .tooltip-bd { padding:15px; color:#55504b; font-size:14px;}
 
 /* modal */
 .modal-content{ display:none; }
