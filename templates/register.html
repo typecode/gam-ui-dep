@@ -8,15 +8,15 @@ Give A Minute - Register
 <div class='continent register'>
 	<div class='headlands clearfix'>
 		<div class='west'>
-			<h2>Give a Minute is a place to make your city better.</h2>
-			<h3>Share your ideas. Build projects. Make a change.</h3>
+			<h1>Give a Minute is a place to make your city better.</h1>
+			<h2>Share your ideas. Build projects. Make a change.</h2>
 		</div>
 		<div class='east'>
 			<div class='box'>
-				<div class='box merlin-progress clearfix'>
-					<div class='indicator 1 west'>1</div>
-					<div class='indicator 2 west'>2</div>
-					<div class='indicator 3 west'>3</div>
+				<div class='box merlin-progress no-labels clearfix'>
+					<div class='indicator 1 west'><span class="num">1</span></div>
+					<div class='indicator 2 west inactive'><span class="num">2</span></div>
+					<div class='indicator 3 west inactive'><span class="num">3</span></div>
 				</div>
 				<div class='box next'>
 					<a class="ca-btn" href="#">
@@ -32,12 +32,12 @@ Give A Minute - Register
 			
 			<div class='step start clearfix'>
 				<p>Create a login using <strong>Facebook</strong> or <strong>Twitter</strong></p>
-				<div class='clearfix'>
-					<a href='' class='login-facebook west'>Facebook</a>
-					<a href='' class='login-twitter west'>Twitter</a>
+				<div class='social-login clearfix'>
+					<a href='' class='login-facebook west'><span>Facebook</span></a>
+					<a href='' class='login-twitter west'><span>Twitter</span></a>
 				</div>
-				<p><a class='step_link' href='#user-info'>Click Here</a> if you want to create a login without Facebook or Twitter</p>
-			</div>
+				<p><a class='step_link' href='#user-info'>Click Here</a> <span class="italic">if you want to create a login without Facebook or Twitter</span></p>
+			</div><!--end step-->
 			
 			<div class='step user-info clearfix' style='display:none;'>
 				<p>Give a Minute users use their real names. <a href='#' class='real-names'><strong>Here's Why</strong></a></p>
@@ -51,7 +51,7 @@ Give A Minute - Register
 				
 				<input type='checkbox' name='tos-user-info' id='tos-user-info' class='tos-user-info'/>
 				<label for='tos-user-info'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step email-step clearfix ' style='display:none;'>
 				<p><strong>You can opt to receive email notifications from Give a Minute projects.</strong></p>
@@ -61,7 +61,7 @@ Give A Minute - Register
 				
 				<input type='checkbox' name='tos-email' id='tos-email' class='tos-email'/>
 				<label for='tos-email'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step sms-lookup clearfix ' style='display:none;'>
 				<div class='west'>
@@ -78,33 +78,33 @@ Give A Minute - Register
 					<input type='checkbox' name='no_sms' id='no_sms' class='no_sms'/>
 					<label for='no_sms'>I didn't text any ideas.</label>
 				</div>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step sms-process clearfix ' style='display:none;'>
 				<p>Finding SMS submissions...</p>
 				<p><img src='/static/images/loader32x32.gif' /></p>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step sms-results clearfix ' style='display:none;'>
 				<p><strong>We found 2 ideas from that telephone number.</strong></p>
 				<p>We'll add these ideas to your profile and link any new ideas that come in from that number</p>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step sms-no-results clearfix ' style='display:none;'>
 				<p>We couldn't find an ideas associated with</p>
 				<p>(XXX) XXX-XXXX</p>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step sms-already-used clearfix ' style='display:none;'>
 				<p>The number</p>
 				<p>(XXX) XXX-XXXX</p>
 				<p>is already associated with an account.</p>
-			</div>
+			</div><!--end step-->
 			
 			<div class='step finish clearfix ' style='display:none;'>
 				<p>Thank you for joining.</p>
 				<p><img src='/static/images/loader32x32.gif' /></p>
-			</div>
+			</div><!--end step-->
 		</form>
 	</div>
 
