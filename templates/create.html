@@ -77,6 +77,26 @@ Give A Minute - Create a Project
 				</div>
 			</div><!--end step-->
 			
+			<div class='step check clearfix' style='display:none;'>
+				<div class="west">
+				</div>
+				
+				<div class="east">
+				</div>
+			</div><!--end step-->
+			
+			<div class='step add clearfix' style='display:none;'>
+				<div class="west">
+				</div>
+				
+				<div class="east">
+				</div>
+			</div><!--end step-->
+			
+			<div class='step finish clearfix ' style='display:none;'>
+				<p class="west">Thank you for joining.</p>
+				<img class="loading" src='/static/images/loader32x32.gif' />
+			</div><!--end step-->
 		</form>
 	</div>
 
@@ -84,9 +104,70 @@ Give A Minute - Create a Project
 		<a class='back' href='#'><p>&larr; Back</p></a>
 	</div>
 	
-	
-	
 </div>
+
+<script>
+	app_page.features.push(function(app){
+		tc.util.log('Give A Minute: Create a Project');
+		app.components.merlin = new tc.merlin(app,{
+			dom:tc.jQ('form.merlin'),
+			progress_element:tc.jQ('.merlin-progress'),
+			next_button:tc.jQ('.ca-btn'),
+			back_button:tc.jQ('.foothills .back'),
+			watch_keypress:true,
+			first_step:'location',
+			steps:{
+				'start':{
+					progress_selector:'.1',
+					selector:'.step.start',
+					prev_step:null,
+					next_step:'location',
+					validators:{
+						'input.name':['max-50','min-3','required'],
+						'input.describe':['max-200','min-3','required']
+					},
+					init:function(merlin,dom){
+						dom.find('.addphoto a').unbind('click').bind('click',function(e,d){
+							merlin.app.components.modal.show('');
+						});
+					}
+				},
+				'location':{
+					progress_selector:'.2',
+					selector:'.step.location',
+					prev_step:'start',
+					next_step:'check',
+					validators:{
+						'input.neighborhood':['max-0','min-0','required']
+					}
+				},
+				'check':{
+					progress_selector:'.2',
+					selector:'.step.check',
+					prev_step:'location',
+					next_step:'add'
+				},
+				'add':{
+					progress_selector:'.3',
+					selector:'.step.add',
+					prev_step:'check',
+					next_step:'finish'
+				},
+				'finish':{
+					progress_selector:'.3',
+					selector:'step.finish',
+					prev_step:null,
+					next_step:null,
+					init:function(merlin,dom){
+						tc.timer(1000,function(){
+							window.location = '/project';
+						});
+					}
+				}
+			}
+		});
+	});
+</script>
 
 
 {% endblock continent %}
