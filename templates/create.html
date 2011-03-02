@@ -115,7 +115,7 @@ Give A Minute - Create a Project
 			next_button:tc.jQ('.ca-btn'),
 			back_button:tc.jQ('.foothills .back'),
 			watch_keypress:true,
-			first_step:'location',
+			first_step:'start',
 			steps:{
 				'start':{
 					progress_selector:'.1',
@@ -124,7 +124,7 @@ Give A Minute - Create a Project
 					next_step:'location',
 					validators:{
 						'input.name':['max-50','min-3','required'],
-						'input.describe':['max-200','min-3','required']
+						'textarea.describe':['max-200','min-3','required']
 					},
 					init:function(merlin,dom){
 						dom.find('.addphoto a').unbind('click').bind('click',function(e,d){
