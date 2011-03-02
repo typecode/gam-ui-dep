@@ -24,6 +24,7 @@ h2{ font-size:24px; line-height: 30px; }
 h3{ font-size:14px; }
 .above-h1 { font-size: 13px; line-height: 13px; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; display: block; letter-spacing: 1px;}
 .above-h1 em { font-weight: normal; font-style: italic; text-transform: none; }
+h1 span.unbold { font-weight: normal; }
 
 
 /* top bar */
@@ -364,3 +365,18 @@ div.continent.create .midlands .step .below-input .suggested-keywords span:hover
 div.continent.create .foothills { margin-bottom: 125px; }
 
 
+/* About page */
+div.continent.about { }
+div.continent.about .midlands { border-top:1px solid #ebeae8; font-size: 16px; line-height: 20px; color: #55504b; padding: 55px 0 25px 0;}
+div.continent.about .midlands > .west { width: 290px; margin-right: 35px; }
+div.continent.about .midlands > .east { width: 635px; }
+div.continent.about .midlands > .south { width: 850px }
+div.continent.about .midlands h2 { font-size: 30px; line-height: 36px; margin-bottom: 45px; }
+div.continent.about .midlands p { font: 16px/24px Georgia, Times, Times New Roman, serif; }
+div.continent.about .midlands p.fancy { font-style: italic; text-indent: 0;}
+div.continent.about .midlands p.indent { text-indent: 20px; }
+div.continent.about .midlands .south p { font: 22px/32px Georgia, Times, Times New Roman, serif; font-style: italic; display: block; margin-top: 80px;}
+div.continent.about .midlands blockquote.pullquote p { display: block; margin: 48px 0 50px 0; font: 54px/60px DIN, Helvetica, Arial, sans-serif; }
+div.continent.about .midlands > .east > .west { width: 290px; margin-right: 35px; }
+div.continent.about .midlands > .east > .east { width: 290px; }
+div.continent.about .midlands > .east > .east p { font: 16px/24px DIN, Helvetica, Arial, sans-serif; }
