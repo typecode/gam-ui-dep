@@ -18,7 +18,7 @@ Give A Minute - Project
 				<span>Join</span>
 			</a>
 			<div class="members">
-				Members <span class="counter">0</span>
+				<a href='#'>Members <span class="counter">0</span></a>
 			</div>
 			<span class="control"><a href="#">Manage</a></span>
 		</div>
@@ -37,16 +37,18 @@ Give A Minute - Project
 	</div>
 
 	<div class='midlands clearfix'>
+		
+		<!-- Begin Project.East -->
 		<div class="east">
 			<div class="box goals">
 				<div class="hd">
 					<h2>Goals <span class="counter">0</span></h2>
 					<span class="control"><a href="#">Manage</a></span>
 					<div class="actions">
-						<a href="#">Propose Your Own</a>
+						<a href="#" class='add'>Propose Your Own</a>
 					</div>
 				</div>
-				<div class=" ">
+				<div class=" " style='display:none;'>
 					<h3>Make <span>an</span> Active Goal <span>for this</span> Project</h3>
 					<div class="empty-state-box big">
 						<a class="close" href="#"><span>Close</span></a>
@@ -84,6 +86,10 @@ Give A Minute - Project
 					</div>
 				</div>
 				
+			</div>
+			
+			<div class='box goals-add' style='display:none;'>
+				
 				<div class="actions detached back">
 					<a href="#">Back <span>to</span> Project Home</a>
 				</div>
@@ -117,6 +123,7 @@ Give A Minute - Project
 				</div>
 				
 			</div>
+			
 			<div class="box conversation">
 				<div class="conversation-controls">
 					<a class="rss-btn" href="#"><span><abbr>RSS</abbr></span></a>
@@ -175,7 +182,9 @@ Give A Minute - Project
 					Load older posts
 				</div>
 			</div>
-			<div class="box members">
+			
+			<!-- begin members -->
+			<div class="box members" style='display:none;'>
 				<div class="hd">
 					<h2>Members <span class="counter">0</span></h2>
 					<div class="actions back">
@@ -184,11 +193,16 @@ Give A Minute - Project
 				</div>
 				<div class="bd">
 					<div class="west">
-						<div class="empty-state-box">
+						
+						<!-- Begin Members.Empty -->
+						<div class="empty-state-box" style='display:none;'>
 							<a class="close" href="#"><span>Close</span></a>
 							<p>Use the tools at the right to get some members listed in here!</p>
 							<button>Add Link</button>
 						</div>
+						<!-- End Members.Empty -->
+						
+						<!-- Begin Members.Stack -->
 						<ul class="members-stack">
 							<li>
 								<div class="thumb">
@@ -227,8 +241,13 @@ Give A Minute - Project
 								<a href="">Maia A.</a>
 							</li>
 						</ul>
+						<!-- End Members.Stack -->
+						
 					</div>
+					
 					<div class="east">
+						
+						<!-- Begin Members.email-invite -->
 						<div class="email-invite">
 							<div class="sub-hd">
 								<h3>Invite People <span>by</span> Email</h3>
@@ -240,6 +259,9 @@ Give A Minute - Project
 								</form>
 							</div>
 						</div>
+						<!-- End Members.email-invite -->
+						
+						<!-- Begin Members.ideas-invite -->
 						<div class="ideas-invite">
 							<div class="sub-hd">
 								<h3>Invite People <span>with</span> Similar Ideas</h3>
@@ -275,10 +297,19 @@ Give A Minute - Project
 								</div>
 							</div>
 						</div>
+						<!-- End Members.ideas-invite -->
+						
 					</div>
 				</div>
 			</div>
+			<!-- end Members -->
+			
+			
 		</div>
+		<!-- End Project.East -->
+		
+		
+		<!-- Begin Project.West -->
 		<div class="west">
 			
 			<div class="box mission">
@@ -346,12 +377,16 @@ Give A Minute - Project
 							<h3>External Links</h3>
 						</div>
 						<div class="sub-bd">
-							<div class="empty-state-box">
+							
+							
+							<div class="empty-state-box" style='display:none;'>
 								<a class="close" href="#"><span>Close</span></a>
 								<p><a href="">Add links</a> to anything, including some of our recommended links like Facebook groups and Kickstarter.</p>
 								<button class='add-link'>Add Link</button>
 							</div>
-							<div class="tooltip">
+							
+							
+							<div class="tooltip" style='display:none;'>
 								<div class="tooltip-hd">
 									<h2>Bronx River Alliance</h2>
 								</div>
@@ -383,7 +418,7 @@ Give A Minute - Project
 							<h3>Organizations</h3>
 						</div>
 						<div class="sub-bd">
-							<div class="empty-state-box">
+							<div class="empty-state-box" style='display:none;'>
 								<a class="close" href="#"><span>Close</span></a>
 								<p>When you <a href="">add organizations</a>, we'll introduce your project to the people over there.</p>
 								<button>Add Organizations</button>
