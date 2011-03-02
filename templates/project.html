@@ -280,18 +280,21 @@ Give A Minute - Project
 			</div>
 		</div>
 		<div class="west">
+			
 			<div class="box mission">
+				
 				<div class="hd">
 					<h2>Mission</h2>
 					<span class="control"><a href="#">Manage</a></span>
 				</div>
+				
 				<div class="bd">
 					<div class="our-mission">
 						<div class="sub-hd">
 							<h3>Our Mission</h3>
 						</div>
 						<div class="sub-bd">
-							<p>Tired of the empty lot at 161st and Melrose? Let's start a community gardgen to help out the Bronx and get the kids up here involved!</p>
+							<p>(project.info.mission) Tired of the empty lot at 161st and Melrose? Let's start a community gardgen to help out the Bronx and get the kids up here involved!</p>
 						</div>
 					</div>
 					<div class="endorsements">
@@ -299,7 +302,7 @@ Give A Minute - Project
 							<h3>Endorsements</h3>
 						</div>
 						<div class="sub-bd">
-							
+							Endorsements
 						</div>
 					</div>
 					<div class="location">
@@ -307,7 +310,7 @@ Give A Minute - Project
 							<h3>Location</h3>
 						</div>
 						<div class="sub-bd">
-							<div class="map-holder"></div>
+							<div class="map-holder">Location Text</div>
 						</div>
 					</div>
 					<div class="keywords">
@@ -316,6 +319,7 @@ Give A Minute - Project
 						</div>
 						<div class="sub-bd">
 							<ul class="tag-cloud">
+								<li><a href="">(mission.info.keywords)</a></li>
 								<li><a href="">garden</a></li>
 								<li><a href="">trees</a></li>
 								<li><a href="">green</a></li>
@@ -325,11 +329,16 @@ Give A Minute - Project
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> <!-- end .box.mission -->
+			
+			
+			
 			<div class="box resources">
+				
 				<div class="hd">
 					<h2>Resources</h2>
 				</div>
+				
 				<div class="bd">
 					<p class="hint">The resources listed below are separate entities not run by the Give a Minute Projects but used by this Project</p>
 					<div class="external-links">
@@ -342,8 +351,6 @@ Give A Minute - Project
 								<p><a href="">Add links</a> to anything, including some of our recommended links like Facebook groups and Kickstarter.</p>
 								<button class='add-link'>Add Link</button>
 							</div>
-							
-							
 							<div class="tooltip">
 								<div class="tooltip-hd">
 									<h2>Bronx River Alliance</h2>
@@ -360,7 +367,6 @@ Give A Minute - Project
 									<dl>
 										<dt>Visit Us</dt>
 										<dd><a href="">bronxriver.org</a></dd>
-										
 										<dt>Latest Update</dt>
 										<dd>
 											<blockquote>
@@ -370,10 +376,8 @@ Give A Minute - Project
 									</dl>
 								</div>
 							</div>
-							
 						</div>
 					</div>
-					
 					<div class="organizations">
 						<div class="sub-hd">
 							<h3>Organizations</h3>
@@ -387,9 +391,12 @@ Give A Minute - Project
 						</div>
 					</div>
 				</div>
+				
+				
 				<div class="ft">
 					<button>Add a Resource</button>
 				</div>
+				
 			</div>
 			<div class="box fresh-ideas">
 				<p class="hint">Check out some new ideas related to your project!</p>
@@ -485,6 +492,12 @@ Give A Minute - Project
 <script>
 	app_page.features.push(function(app){
 		tc.util.log('Give A Minute: Project');
+		
+		app.components.project = new tc.gam.project({
+			dom:tc.jQ('.continent.project')
+		});
+		
+		tc.util.dump(app.components.project);
 		
 		tc.jQ('a.join-project').bind('click',{
 			app:app,

@@ -118,7 +118,7 @@ Give A Minute - Register
 	app_page.features.push(function(app){
 		tc.util.log('Give A Minute: Register');
 		app.components.merlin = new tc.merlin(app,{
-			dom:'.merlin',
+			dom:tc.jQ('form.merlin'),
 			progress_element:tc.jQ('.merlin-progress'),
 			next_button:tc.jQ('.ca-btn'),
 			back_button:tc.jQ('.foothills .back'),

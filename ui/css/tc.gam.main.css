@@ -44,7 +44,7 @@ div.atmosphere .stratosphere li.userland { margin-top: 15px; text-align: right; 
 div.atmosphere .stratosphere li.userland div { float:right; font-weight: bold; font-size: 13px; line-height: 13px; }
 div.atmosphere .stratosphere li.userland div.join { margin-right: 45px; }
 
-div.continent{ width:960px; margin:0 auto; }
+div.continent{ width:960px; margin:35px auto 0; }
 	div.headlands{ width:100%; position:relative; margin:0 0 20px; }
 	div.midlands{ width:100%; }
 	div.foothills{ width:100%; }

@@ -23,10 +23,10 @@ tc.merlin.prototype.init = function(app,options){
 	tc.util.log('tc.merlin.init');
 	this.options = tc.jQ.extend(this.options,options);
 	this.app = app;
-	if(options.dom instanceof String){
-		options.dom = tc.jQ(options.dom);
+	if(this.options.dom instanceof String){
+		this.options.dom = tc.jQ(options.dom);
 	}
-	this.dom = options.dom;
+	this.dom = this.options.dom;
 	this.event_data = {app:app,me:this};
 	this.handle_steps();
 	this.handle_controls(options.controls);
@@ -38,6 +38,7 @@ tc.merlin.prototype.init = function(app,options){
 
 tc.merlin.prototype.setup_events = function(app){
 	tc.util.log('tc.merlin.setup_events');
+	tc.jQ(window).bind('hashchange',this.event_data,this.handlers.hashchange)
 	this.dom.find('a.step_link').bind('click',this.event_data,this.handlers.a_click);
 	if(this.options.back_button){
 		this.options.back_button.bind('click',this.event_data,this.handlers.last_step);
@@ -58,6 +59,9 @@ tc.merlin.prototype.handle_controls = function(controls){
 tc.merlin.prototype.handle_steps = function(){
 	tc.util.log('tc.merlin.handle_steps');
 	var i;
+	
+	tc.util.dump(this.dom);
+	
 	for(i in this.options.steps){
 		if(this.options.steps[i].selector){
 			this.options.steps[i].dom = this.dom.find(this.options.steps[i].selector);
@@ -91,6 +95,7 @@ tc.merlin.prototype.show_step = function(step){
 		.one('focus',function(e){
 			tc.jQ(e.target).addClass('has-been-focused').removeClass('valid invalid');
 		}).bind('keyup change',this.event_data,this.handlers.keypress);
+	window.location.hash = step;
 	if(tc.jQ.isFunction(this.current_step.init)){
 		this.current_step.init(this,this.current_step.dom);
 	}
@@ -109,11 +114,6 @@ tc.merlin.prototype.validate = function(validators,force_focus){
 	if(!this.current_step.inputs){
 		this.current_step.inputs = {};
 		for(i in validators){
-			
-			tc.util.dump(this.current_step.dom);
-			tc.util.dump(i);
-			tc.util.dump(this.current_step.dom.find(i));
-				
 			this.current_step.inputs[i] = {
 				element:this.current_step.dom.find(i),
 				validators:validators[i]
@@ -150,6 +150,15 @@ tc.merlin.prototype.validate = function(validators,force_focus){
 }
 
 tc.merlin.prototype.handlers = {
+	hashchange:function(e,d){
+		tc.util.log('tc.merlin.handlers.hashchange');
+		var hash;
+		hash = window.location.hash.substring(1,window.location.hash.length);
+		e.data.me.show_step(hash);
+		if(!e.data.me.options.steps[hash]){
+			
+		}
+	},
 	a_click:function(e,d){
 		tc.util.log('tc.merlin.handlers.a_click');
 		e.preventDefault();
@@ -197,7 +206,6 @@ tc.merlin.prototype.handlers = {
 		if(e.data.me.options.next_button){
 			e.data.me.options.next_button.removeClass('enabled').addClass('disabled');
 		}
-		
 	}
 }
 
