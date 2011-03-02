@@ -86,7 +86,6 @@ div.continent textarea:hover,
 div.seafloor input:hover, 
 div.seafloor input:focus {-webkit-box-shadow: 1px 1px 4px #cfcecc; -moz-box-shadow: 1px 1px 4px #cfcecc; box-shadow: 1px 1px 4px #cfcecc;}
 
-
 .form-pane { overflow:hidden; }
 .form-pane .fields { float:left; }
 .fields label { display:block; }
@@ -134,10 +133,16 @@ div.seafloor input:focus {-webkit-box-shadow: 1px 1px 4px #cfcecc; -moz-box-shad
 .merlin-progress .indicator.inactive .num { background-color: #d1d1cf; }
 
 .merlin .step input,
-.merlin .step textarea { background-color: #fff; font-size: 18px; line-height: 18px; height: 22px; color: #b9b8b6; padding: 8px; border: 1px solid #b9b8b6; font-family: DIN, Verdana, Arial, sans-serif; display: block; float: left; font-style: italic; }
+.merlin .step textarea { background-color: #fff; font-size: 18px; line-height: 18px; color: #b9b8b6; padding: 8px; border: 1px solid #b9b8b6; font-family: DIN, Verdana, Arial, sans-serif; display: block; float: left;  }
+.merlin .step input[type="text"],
+.merlin .step input[type="password"] { height: 22px; font-style: italic;}
 .merlin .step input:focus,
 .merlin .step textarea:focus { font-family: Georgia, Times, Times New Roman, serif; color: #55504b; font-style: normal; }
 .merlin .step input[type="checkbox"] { width: 20px; height: 20px; background-color: #d6d5d4; }
+.merlin .step input[type=submit],
+.merlin .step input[type=button] {background-color: #e5e4e1; color: #878786; font-weight: bold; font-size: 16px; line-height: 16px; padding: 10px; cursor: pointer; }
+.merlin .step input[type=submit]:hover,
+.merlin .step input[type=button]:hover {color: #F3F2F0; background: #7F7D7A; background: -moz-linear-gradient(top, #7F7D7A 0%, #A8A6A3 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7F7D7A), color-stop(100%,#A8A6A3)); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7F7D7A', endColorstr='#A8A6A3',GradientType=0 );}
 
 
 /* tab view */
@@ -272,10 +277,38 @@ div.continent.register .midlands .step.user-info .row.row-password .pass-strengt
 div.continent.register .midlands .step.user-info input[type="text"],
 div.continent.register .midlands .step.user-info input[type="password"] { width: 259px /* with 8px padding, adds to 275px */}
 div.continent.register .midlands .step.user-info label { font-size: 16px; line-height: 16px; margin-bottom: 8px; display: block }
-div.continent.register .midlands .step.user-info label.tos-user-info-label { display: block; float: left; margin-left: 10px; font-size: 14px; line-height: 19px;}
-div.continent.register .midlands .step.user-info label.tos-user-info-label a { border-bottom: 1px solid #55504b; color: #55504b; font-weight: bold;}
 div.continent.register .midlands .step.user-info a.real-names { font-weight: bold; color: #55504b; border-bottom: 2px solid #55504b; }
 div.continent.register .midlands .step.user-info a.real-names:hover { border-bottom-color: #d2cac2; }
+div.continent.register .midlands .step.user-info label.tos-user-info-label,
+div.continent.register .midlands .step.email-step label.tos-email-label { display: block; float: left; margin-left: 10px; font-size: 14px; line-height: 19px;}
+div.continent.register .midlands .step.user-info label.tos-user-info-label a,
+div.continent.register .midlands .step.email-step label.tos-email-label a { border-bottom: 1px solid #55504b; color: #55504b; font-weight: bold;}
+
+div.continent.register .midlands .step.email-step p { font-size: 21px; line-height: 30px; margin-bottom: 30px; }
+div.continent.register .midlands .step.email-step input[type="text"] { width: 424px; margin-right: 35px; }
+
+div.continent.register .midlands .step.sms-lookup { padding-bottom: 0; /* padding added to .step.sms-lookup > .west to get "or" background image to better line up */ }
+div.continent.register .midlands .step.sms-lookup > .west { width: 450px; background: url(../images/bg_registerOr.png) center right no-repeat transparent; margin-right: 100px; padding-right: 75px; padding-bottom: 35px; }
+div.continent.register .midlands .step.sms-lookup > .east { width: 335px; margin-top: 65px; }
+div.continent.register .midlands .step.sms-lookup p { margin-bottom: 20px; }
+div.continent.register .midlands .step.sms-lookup .phone_1,
+div.continent.register .midlands .step.sms-lookup .phone_2 { width: 39px /* total width of 55px with 8px padding */; margin-right: 8px; text-align: center }
+div.continent.register .midlands .step.sms-lookup .phone_3 { width: 59px /* total width of 70px with 8px padding */; margin-right: 20px; text-align: center }
+div.continent.register .midlands .step.sms-lookup .phone-dash { padding: 8px 8px 0 0; height: 22px;}
+div.continent.register .midlands .step.sms-lookup label.no_sms_label { font-size: 24px; line-height: 24px; margin-left: 15px; }
+
+div.continent.register .midlands .step.sms-process p,
+div.continent.register .midlands .step.sms-results p,
+div.continent.register .midlands .step.sms-no-results p,
+div.continent.register .midlands .step.sms-already-used p,
+div.continent.register .midlands .step.finish p { font-size: 21px; line-height: 28px; }
+div.continent.register .midlands .step.sms-results p,
+div.continent.register .midlands .step.sms-no-results p,
+div.continent.register .midlands .step.sms-already-used p { width: 500px; }
+div.continent.register .midlands .step.sms-no-results .phone-num,
+div.continent.register .midlands .step.sms-already-used .phone-num { font: 32px/32px Georgia, Times, Times New Roman, serif; display: block; margin-top: 10px; }
+div.continent.register .midlands .step.sms-process img.loading,
+div.continent.register .midlands .step.finish img.loading { float: left; margin-left: 30px; position: relative; top: -4px; }
 
 div.continent.register .foothills .back { display:block; font-size: 18px; height: 20px; font-weight: bold; line-height: 18px; color: #55504b; text-transform: uppercase; padding-left: 21px; background: url(../images/control_backArrow.png) left center no-repeat transparent;}
 div.continent.register .foothills .back:hover span { border-bottom: 1px solid #55504b; }
