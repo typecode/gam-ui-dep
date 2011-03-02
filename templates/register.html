@@ -40,17 +40,30 @@ Give A Minute - Register
 			</div><!--end step-->
 			
 			<div class='step user-info clearfix' style='display:none;'>
-				<p>Give a Minute users use their real names. <a href='#' class='real-names'><strong>Here's Why</strong></a></p>
+				<p>Give a Minute users use their real names. <a href='#' class='real-names'>Here's Why</a>.</p>
 				
-				<input value='' type='text' name='f_name' id='f_name' class='f_name'/>
-				<input value='' type='text' name='l_name' id='l_name' class='l_name'/>
-				<label for='email'>Email</label>
-				<input value='' type='text' name='email' id='email' class='email'/>
-				<label for='password'>Password</label>
-				<input value='' type='password' name='password' id='password' class='password'/>
+				<div class="west">
+					<div class="row">
+						<input value='First name' type='text' name='f_name' id='f_name' class='f_name'/>
+					</div>
+					<div class="row">
+						<input value='Last name' type='text' name='l_name' id='l_name' class='l_name'/>
+					</div>
+					<div class="row">
+						<label for='email'>E-mail</label>
+						<input value='' type='text' name='email' id='email' class='email'/>
+					</div>
+					<div class="row row-password">
+						<label for='password'>Password</label>
+						<input value='' type='password' name='password' id='password' class='password'/>
+						<span class="pass-strength">Strong</span>
+					</div>
+				</div>
 				
-				<input type='checkbox' name='tos-user-info' id='tos-user-info' class='tos-user-info'/>
-				<label for='tos-user-info'>I accept and have read the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
+				<div class="east">
+					<input type='checkbox' name='tos-user-info' id='tos-user-info' class='tos-user-info'/>
+					<label class="tos-user-info-label" for='tos-user-info'>I accept and have read<br />the <a href='/tou' target='_blank'>Terms and Conditions</a></label>
+				</div>
 			</div><!--end step-->
 			
 			<div class='step email-step clearfix ' style='display:none;'>
@@ -123,7 +136,7 @@ Give A Minute - Register
 			next_button:tc.jQ('.ca-btn'),
 			back_button:tc.jQ('.foothills .back'),
 			watch_keypress:true,
-			first_step:'start',
+			first_step:'user-info',
 			steps:{
 				'start':{
 					progress_selector:'.1',
