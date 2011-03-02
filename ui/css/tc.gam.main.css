@@ -118,8 +118,12 @@ button {
 /* ... */
 
 /* empty state */
-.empty-state-box { padding:10px; background-color:#d1fdb9; border:1px solid #cae6b5; }
+.empty-state-box { position:relative; padding:10px 7px; background-color:#d1fdb9; border:1px solid #cae6b5; }
+.empty-state-box .close { top:5px; right:8px; width:7px; height:7px; background-image:url("../images/control_close_7_green.png"); }
+.empty-state-box p { font-size:14px; }
+.empty-state-box p a { font-weight:bold; text-decoration:underline; }
 .empty-state-box.big {  }
+.empty-state-box.big p { font-size:21px; }
 
 /* note card */
 .note-meta-hd { display:block; }
@@ -138,7 +142,7 @@ button {
 .project-header .tools { float:right; width:170px; }
 
 .project-header .main { overflow:hidden; }
-.project-header .main h1 { font-family:MetaSerif,Georgia,serif; font-size:38px; }
+.project-header .main h1 { font-family:MetaSerif,Georgia,serif; font-size:38px; font-weight:normal; }
 .project-header .main .meta { display:block; }
 
 .continent.project .midlands > .east { width:600px; }
