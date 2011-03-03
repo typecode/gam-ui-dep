@@ -78,7 +78,7 @@ input[type="text"],
 button,
 textarea {
 	-webkit-transition: 100ms ease-in;  -moz-transition: 100ms ease-in; -o-transition: 100ms ease-in; transition: 100ms ease-in;
-	-moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;
 }
 div.continent input:hover, 
 div.continent input:focus,
@@ -368,7 +368,7 @@ div.continent.create .headlands .next a.ca-btn {display: block; background: url(
 div.continent.create .headlands .next a.ca-btn:hover {background-image: url(../images/button_nextActive.png);} 
 div.continent.create .headlands .next a.ca-btn span { visibility: hidden }
 
-div.continent.create .midlands { border-bottom:1px solid #ebeae8; padding-bottom: 25px; }
+div.continent.create .midlands { /*border-bottom:1px solid #ebeae8;*/ padding-bottom: 25px; }
 div.continent.create .midlands .step.start > .west { width: 160px; }
 div.continent.create .midlands .step.start > .east { width: 800px; }
 div.continent.create .midlands .step.start .thumb { width: 122px; height: 135px; }
@@ -400,7 +400,36 @@ div.continent.create .midlands .step.location > .west { width: 270px; }
 div.continent.create .midlands .step.location > .east { width: 690px; }
 div.continent.create .midlands .step.location h3 { font-size: 24px; line-height: 24px; font-weight: bold; margin-bottom: 25px; }
 div.continent.create .midlands .step.location .row { display: block; margin-bottom: 20px; }
+div.continent.create .midlands .step.location .row.row-2 { margin-bottom: 10px; }
+div.continent.create .midlands .step.location .row.row-3 { margin-left: 40px; }
 div.continent.create .midlands .step.location label { display: block; float: left; margin-left: 10px; font-size: 21px; line-height: 21px; }
+div.continent.create .midlands .step.location input.location-hood-enter { width: 419px; float: none; }
+div.continent.create .midlands .step.location div.location-hood-list { 
+	width: 419px; padding: 8px; margin-top:2px; background-color:#fff; border:1px solid #B9B8B6; font-size: 18px; line-height: 28px;
+	-webkit-transition: 100ms ease-in;  -moz-transition: 100ms ease-in; -o-transition: 100ms ease-in; transition: 100ms ease-in;
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;
+	}
+div.continent.create .midlands .step.location div.location-hood-list:hover { -webkit-box-shadow: 1px 1px 4px #cfcecc; -moz-box-shadow: 1px 1px 4px #cfcecc; box-shadow: 1px 1px 4px #cfcecc; }
+
+div.continent.create .midlands .step.check h3 { font-size: 18px; line-height: 18px; margin-bottom: 12px; text-transform: uppercase; }
+div.continent.create .midlands .step.check ul { display: block; border-bottom: 1px solid #e0dedc; width: 960px; }
+div.continent.create .midlands .step.check li { padding: 15px 10px 15px; width: 299px; height: 100px; border-top: 1px solid #e0dedc; border-right: 1px solid #e0dedc; float: left;}
+div.continent.create .midlands .step.check li.every-third { border-right: 0px; }
+div.continent.create .midlands .step.check li div.thumb { }
+div.continent.create .midlands .step.check li div.thumb img { position: absolute; top: 6px; left: 6px; z-index: 1; }
+div.continent.create .midlands .step.check li div.thumb .overlay-tag { display: block; position: absolute; width: 24px; height: 24px; background: url(../images/avatar_sq_19.png) top left no-repeat #F3F2F0; z-index: 2; }
+div.continent.create .midlands .step.check li div.thumb .member-count { 
+	position: absolute; top: 59px; left: 6px; margin-top: 5px; padding: 2px 12px 2px 4px; font-weight: bold; font-size: 11px; line-height: 11px;  
+	background: url(../images/bg_avatar_memberCount.png) center right no-repeat #fff; color: #747474;
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;}
+div.continent.create .midlands .step.check li div.project-info { margin-left: 70px; height: 100px; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis;  }
+div.continent.create .midlands .step.check li div.project-info span { display: block; font-family: Georgia, Times, Times New Roman, serif; font-size: 13px; line-height: 16px;  }
+div.continent.create .midlands .step.check li span.link { margin-bottom: 2px; }
+div.continent.create .midlands .step.check li span.link a { font-size: 17px; line-height: 19px; font-weight: bold; color: #55504b; }
+div.continent.create .midlands .step.check li span.link a:hover { border-bottom: 1px solid #55504b; }
+div.continent.create .midlands .step.check li span.creator { margin-bottom: 6px; }
+div.continent.create .midlands .step.check li span.description { text-overflow: ellipsis; }
+
 
 div.continent.create .foothills { margin-bottom: 125px; padding-top:30px; }
 
