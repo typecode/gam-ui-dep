@@ -8,7 +8,7 @@ html.universe{ }
 head.heavens{ /* too bad we can't style the heavens */ }
 
 body.earth{ height:100%; overflow:hidden; background:none repeat scroll 0 0 #F3F2F0; text-align:left;
-	font-family:DIN,Helvetica; font-size:13px; }
+	font-family:DIN,Helvetica; font-size:13px; color: #55504b; }
 div.exosphere{ height:100%; overflow-y:scroll; }
 
 .west{ float:left; }
@@ -146,6 +146,11 @@ div.seafloor input:focus {-webkit-box-shadow: 1px 1px 4px #cfcecc; -moz-box-shad
 .merlin .step input[type=button]:hover {color: #F3F2F0; background: #7F7D7A; background: -moz-linear-gradient(top, #7F7D7A 0%, #A8A6A3 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7F7D7A), color-stop(100%,#A8A6A3)); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7F7D7A', endColorstr='#A8A6A3',GradientType=0 );}
 
 
+/* back button (used for merlin */
+.foothills .back { display:block; font-size: 18px; height: 20px; font-weight: bold; line-height: 18px; color: #55504b; text-transform: uppercase; padding-left: 21px; background: url(../images/control_backArrow.png) left center no-repeat transparent;}
+.foothills .back:hover span { border-bottom: 1px solid #55504b; }
+
+
 /* tab view */
 /* ... */
 
@@ -254,7 +259,6 @@ div.continent.register .midlands { border-top:1px solid #ebeae8; border-bottom:1
 div.continent.register .midlands input.has-been-focused.valid{ background-color:green; }
 div.continent.register .midlands input.has-been-focused.not-valid{ background-color:red; }
 div.continent.register .merlin .step{ padding:10px 0px 10px 0px; }
-div.continent.register .foothills { padding-top:30px; }
 
 div.continent.register .midlands p { font-size:16px; line-height: 20px; }
 div.continent.register .midlands .step.start p {text-transform: uppercase;}
@@ -311,9 +315,7 @@ div.continent.register .midlands .step.sms-already-used .phone-num { font: 32px/
 div.continent.register .midlands .step.sms-process img.loading,
 div.continent.register .midlands .step.finish img.loading { float: left; margin-left: 30px; position: relative; top: -4px; }
 
-div.continent.register .foothills .back { display:block; font-size: 18px; height: 20px; font-weight: bold; line-height: 18px; color: #55504b; text-transform: uppercase; padding-left: 21px; background: url(../images/control_backArrow.png) left center no-repeat transparent;}
-div.continent.register .foothills .back:hover span { border-bottom: 1px solid #55504b; }
-div.continent.register .foothills { margin-bottom: 250px; }
+div.continent.register .foothills { margin-bottom: 250px; padding-top:30px; }
 
 
 /* Login */
@@ -327,7 +329,6 @@ div.continent.login .midlands .east { width:374px; border-left:1px solid #ebeae8
 div.continent.login .midlands .east p { margin-left:35px; }
 
 
-
 /* Create */
 div.continent.create { }
 div.continent.create .headlands { margin-bottom: 65px; }
@@ -336,33 +337,42 @@ div.continent.create .headlands > .east { width: 360px; text-align: right}
 div.continent.create .headlands .next a.ca-btn {display: block; background: url(../images/button_nextInactive.png) top left no-repeat transparent; width: 138px; height: 103px; float: right; margin-top: 8px;} 
 div.continent.create .headlands .next a.ca-btn:hover {background-image: url(../images/button_nextActive.png);} 
 div.continent.create .headlands .next a.ca-btn span { visibility: hidden }
-div.continent.create .midlands .step > .west { width: 160px; }
-div.continent.create .midlands .step > .east { width: 800px; }
-div.continent.create .midlands .step .thumb { width: 122px; height: 135px; }
-div.continent.create .midlands .step .thumb .proj { position: absolute; bottom: 0; left: 0; margin-left: 7px; z-index: 1; }
-div.continent.create .midlands .step .thumb .overlay-tag { 
+
+div.continent.create .midlands { border-bottom:1px solid #ebeae8; padding-bottom: 25px; }
+div.continent.create .midlands .step.start > .west { width: 160px; }
+div.continent.create .midlands .step.start > .east { width: 800px; }
+div.continent.create .midlands .step.start .thumb { width: 122px; height: 135px; }
+div.continent.create .midlands .step.start .thumb .proj { position: absolute; bottom: 0; left: 0; margin-left: 7px; z-index: 1; }
+div.continent.create .midlands .step.start .thumb .overlay-tag { 
 	top:9px; left:-6px; padding:7px; z-index:2;
 	width:49px; height:49px; background-image:url("../images/avatar_sq_49.png");
 	background-color:#f3f2f0; background-position:center;
 	}
-div.continent.create .midlands .step .addphoto { margin: 5px 0 0 4px; padding: 16px 0 0 4px; background: url(../images/control_addPhotoArrow.png) top left no-repeat transparent; color: #55504b; letter-spacing: 1px; font-size: 11px; text-transform: uppercase}
-div.continent.create .midlands .step .addphoto a { padding: 3px 2px; color: #55504b; }
-div.continent.create .midlands .step .addphoto a:hover { background-color: #e6e6e3; font-weight: bold; }
-div.continent.create .midlands .step div.row { width: 800px; clear: both; margin: 14px 0 6px; }
-div.continent.create .midlands .step label { font-size: 16px; line-height: 20px; color: #55504b; width: 200px; margin-right: 15px; display: block; float: left; padding-top: 3px;}
-div.continent.create .midlands .step input,
-div.continent.create .midlands .step textarea { width: 412px;}
-div.continent.create .midlands .step textarea { height: 135px; }
-div.continent.create .midlands .step .charlimit {float:left; display: block; margin-left: 6px; margin-top: 15px; color: #878786; font-size: 11px; line-height: 11px; font-weight: bold;}
-div.continent.create .midlands .step .below-input {display: block; clear: both; margin-left: 220px; padding-top: 10px; font-size: 16px; line-height: 22px; color: #55504b; }
-div.continent.create .midlands .step .below-input .createdby { position: relative; top: -2px; margin-right: 5px; }
-div.continent.create .midlands .step .below-input .user-name { font-size: 22px; font-family: Georgia, Times, Times New Roman, serif; font-weight: bold; margin-right: 10px;}
-div.continent.create .midlands .step .below-input .edit { position: relative; top: -3px; font-size: 9px; font-weight: bold; font-style: italic; }
-div.continent.create .midlands .step .below-input .suggested-keywords-label { font-size: 10px; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 3px; }
-div.continent.create .midlands .step .below-input .suggested-keywords { font-size: 17px; line-height: 20px; }
-div.continent.create .midlands .step .below-input .suggested-keywords span { font-family: Georgia, Times, Times New Roman, serif; border-bottom: 1px solid #bab2a9; margin-right: 20px;}
-div.continent.create .midlands .step .below-input .suggested-keywords span:hover { border-bottom-color: #55504b;}
-div.continent.create .foothills { margin-bottom: 125px; }
+div.continent.create .midlands .step.start .addphoto { margin: 5px 0 0 4px; padding: 16px 0 0 4px; background: url(../images/control_addPhotoArrow.png) top left no-repeat transparent; color: #55504b; letter-spacing: 1px; font-size: 11px; text-transform: uppercase}
+div.continent.create .midlands .step.start .addphoto a { padding: 3px 2px; color: #55504b; }
+div.continent.create .midlands .step.start .addphoto a:hover { background-color: #e6e6e3; font-weight: bold; }
+div.continent.create .midlands .step.start div.row { width: 800px; clear: both; margin: 14px 0 6px; }
+div.continent.create .midlands .step.start label { font-size: 16px; line-height: 20px; color: #55504b; width: 200px; margin-right: 15px; display: block; float: left; padding-top: 3px;}
+div.continent.create .midlands .step.start input,
+div.continent.create .midlands .step.start textarea { width: 412px;}
+div.continent.create .midlands .step.start textarea { height: 135px; }
+div.continent.create .midlands .step.start .charlimit {float:left; display: block; margin-left: 6px; margin-top: 15px; color: #878786; font-size: 11px; line-height: 11px; font-weight: bold;}
+div.continent.create .midlands .step.start .below-input {display: block; clear: both; margin-left: 220px; padding-top: 10px; font-size: 16px; line-height: 22px; color: #55504b; }
+div.continent.create .midlands .step.start .below-input .createdby { position: relative; top: -2px; margin-right: 5px; }
+div.continent.create .midlands .step.start .below-input .user-name { font-size: 22px; font-family: Georgia, Times, Times New Roman, serif; font-weight: bold; margin-right: 10px;}
+div.continent.create .midlands .step.start .below-input .edit { position: relative; top: -3px; font-size: 9px; font-weight: bold; font-style: italic; }
+div.continent.create .midlands .step.start .below-input .suggested-keywords-label { font-size: 10px; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 3px; }
+div.continent.create .midlands .step.start .below-input .suggested-keywords { font-size: 17px; line-height: 20px; }
+div.continent.create .midlands .step.start .below-input .suggested-keywords span { font-family: Georgia, Times, Times New Roman, serif; border-bottom: 1px solid #bab2a9; margin-right: 20px;}
+div.continent.create .midlands .step.start .below-input .suggested-keywords span:hover { border-bottom-color: #55504b;}
+
+div.continent.create .midlands .step.location > .west { width: 270px; }
+div.continent.create .midlands .step.location > .east { width: 690px; }
+div.continent.create .midlands .step.location h3 { font-size: 24px; line-height: 24px; font-weight: bold; margin-bottom: 25px; }
+div.continent.create .midlands .step.location .row { display: block; margin-bottom: 20px; }
+div.continent.create .midlands .step.location label { display: block; float: left; margin-left: 10px; font-size: 21px; line-height: 21px; }
+
+div.continent.create .foothills { margin-bottom: 125px; padding-top:30px; }
 
 
 /* About page */

@@ -72,8 +72,16 @@ Give A Minute - Create a Project
 			<div class='step location clearfix' style='display:none;'>
 				<div class="west">
 				</div>
-				
 				<div class="east">
+					<h3>Where is your project located?</h3>
+					<div class="row clearfix">
+						<input type='checkbox' name='location-city' id='location-city' class='location-city'/>
+						<label class="location-city-label" for='location-city'>It's for the whole city</a></label>
+					</div>
+					<div class="row clearfix">
+						<input type='checkbox' name='location-neighborhood' id='location-neighborhood' class='location-neighborhood'/>
+						<label class="location-neighborhood-label" for='location-neighborhood'>It's about a neighborhood or borough</a></label>
+					</div>
 				</div>
 			</div><!--end step-->
 			
@@ -101,7 +109,7 @@ Give A Minute - Create a Project
 	</div>
 
 	<div class='foothills'>
-		<a class='back' href='#'><p>&larr; Back</p></a>
+		<a class='back' href='#'><p>Back</p></a>
 	</div>
 	
 </div>
@@ -115,7 +123,7 @@ Give A Minute - Create a Project
 			next_button:tc.jQ('.ca-btn'),
 			back_button:tc.jQ('.foothills .back'),
 			watch_keypress:true,
-			first_step:'start',
+			first_step:'location',
 			steps:{
 				'start':{
 					progress_selector:'.1',
